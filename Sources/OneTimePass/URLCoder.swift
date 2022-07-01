@@ -15,7 +15,7 @@ struct URLCoder {
     let secret: [UInt8]
     let algorithm: HashAlgorithm?
     let digits: Int?
-    let counter: Int64?
+    let counter: Int?
     let period: UInt?
 }
 
@@ -46,7 +46,7 @@ extension URLCoder {
         account = labelAccount
         algorithm = queryItems["algorithm"].flatMap { HashAlgorithm(rawValue: $0) }
         digits = queryItems["digits"].flatMap { Int($0) }
-        counter = queryItems["counter"].flatMap { Int64($0) }
+        counter = queryItems["counter"].flatMap { Int($0) }
         period = queryItems["period"].flatMap { UInt($0) }
     }
 

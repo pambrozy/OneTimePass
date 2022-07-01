@@ -10,7 +10,7 @@ import Crypto
 import Foundation
 
 /// The Time-based one-time password algorithm.
-public struct TOTP: Hashable, Codable {
+public struct TOTP {
     /// The secret.
     public let secret: [UInt8]
 
@@ -28,6 +28,9 @@ public struct TOTP: Hashable, Codable {
 
     /// The account name.
     public let account: String?
+
+    /// A block of code the generator executes to obtain the current date.
+    public var currentDateProvider: () -> Date = { Date() }
 
     /// Creates a new TOTP generator.
     /// - Parameters:
@@ -63,9 +66,9 @@ public struct TOTP: Hashable, Codable {
     /// Creates a new TOTP generator from an URL string.
     /// - Parameter urlString: The URL string in an appropriate format.
     ///
-    /// The example the the URL string:
+    /// The example the URL string:
     /// ```
-    /// otpauth://totp/Example:user@example.com\?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60
+    /// otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60
     /// ```
     ///
     /// The example minimal valid URL string:
@@ -120,7 +123,7 @@ public struct TOTP: Hashable, Codable {
     /// The date when the last code was generated.
     var lastGenerationDate: Date {
         let period = Double(period)
-        let fireInterval = (Date().timeIntervalSince1970 / period).rounded(.down) * period
+        let fireInterval = (currentDateProvider().timeIntervalSince1970 / period).rounded(.down) * period
         return Date(timeIntervalSince1970: fireInterval)
     }
 
@@ -158,7 +161,7 @@ public struct TOTP: Hashable, Codable {
     /// Generates a code for the current date.
     /// - Returns: The generated one-time password code.
     public func generateCode() throws -> String {
-        return try generateCode(date: Date())
+        return try generateCode(date: currentDateProvider())
     }
 
     /// Returns an async sequence of one-time password codes (the current code is **not** included).
@@ -196,7 +199,7 @@ public struct TOTP: Hashable, Codable {
             return false
         }
 
-        let now = Date()
+        let now = currentDateProvider()
 
         if try generateCode(date: now) == code {
             return true
@@ -221,5 +224,36 @@ public struct TOTP: Hashable, Codable {
         }
 
         return false
+    }
+}
+
+extension TOTP: Hashable {
+    public static func == (lhs: TOTP, rhs: TOTP) -> Bool {
+        lhs.secret == rhs.secret &&
+        lhs.algorithm == rhs.algorithm &&
+        lhs.digits == rhs.digits &&
+        lhs.period == rhs.period &&
+        lhs.issuer == rhs.issuer &&
+        lhs.account == rhs.account
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(secret)
+        hasher.combine(algorithm)
+        hasher.combine(digits)
+        hasher.combine(period)
+        hasher.combine(issuer)
+        hasher.combine(account)
+    }
+}
+
+extension TOTP: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case secret
+        case algorithm
+        case digits
+        case period
+        case issuer
+        case account
     }
 }

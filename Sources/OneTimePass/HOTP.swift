@@ -15,7 +15,7 @@ public struct HOTP: Hashable, Codable {
     public let secret: [UInt8]
 
     /// The counter counting the number of iterations.
-    public var counter: Int64
+    public var counter: Int
 
     /// The cryptographic hash method used.
     public let algorithm: HashAlgorithm
@@ -39,7 +39,7 @@ public struct HOTP: Hashable, Codable {
     ///   - account: The account name (such as an e-mail address).
     public init<D: DataProtocol>(
         secret: D,
-        counter: Int64,
+        counter: Int,
         algorithm: HashAlgorithm = .SHA1,
         digits: Int = 6,
         issuer: String? = nil,
@@ -112,8 +112,8 @@ public struct HOTP: Hashable, Codable {
     /// Generates a code for a given counter value.
     /// - Parameter counter: The counter value to generate the code for.
     /// - Returns: The generated one-time password code.
-    public func generateCode(counter: Int64) throws -> String {
-        let data = withUnsafeBytes(of: counter.bigEndian, Array.init)
+    public func generateCode(counter: Int) throws -> String {
+        let data = withUnsafeBytes(of: Int64(counter).bigEndian, Array.init)
         let bytes = algorithm.authenticationCode(for: data, using: SymmetricKey(data: Array(secret)))
 
         guard let lastByte = bytes.last else {
