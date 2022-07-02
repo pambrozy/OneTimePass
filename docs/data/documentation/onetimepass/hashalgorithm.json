@@ -1,0 +1,356 @@
+{
+  "abstract" : [
+    {
+      "text" : "A cryptographic hash algorithm.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:11OneTimePass13HashAlgorithmO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "HashAlgorithm"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "OneTimePass"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "HashAlgorithm"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "HashAlgorithm"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "HashAlgorithm"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/Se",
+        "doc:\/\/OneTimePass\/SE",
+        "doc:\/\/OneTimePass\/SQ",
+        "doc:\/\/OneTimePass\/SH",
+        "doc:\/\/OneTimePass\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA1",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA256",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA512"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/Equatable-Implementations",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/onetimepass\/hashalgorithm"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://OneTimePass/SE": {
+  "identifier" : "doc:\/\/OneTimePass\/SE",
+  "title" : "Swift.Encodable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/SH": {
+  "identifier" : "doc:\/\/OneTimePass\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/SQ": {
+  "identifier" : "doc:\/\/OneTimePass\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/SY": {
+  "identifier" : "doc:\/\/OneTimePass\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/Se": {
+  "identifier" : "doc:\/\/OneTimePass\/Se",
+  "title" : "Swift.Decodable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/documentation/OneTimePass": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "OneTimePass",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm": {
+  "abstract" : [
+    {
+      "text" : "A cryptographic hash algorithm.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "HashAlgorithm"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "HashAlgorithm"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "HashAlgorithm",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm\/equatable-implementations"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm\/rawrepresentable-implementations"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/SHA1": {
+  "abstract" : [
+    {
+      "text" : "The SHA-1 (Secure Hash Algorithm 1) hash.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SHA1"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA1",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HashAlgorithm.SHA1",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm\/sha1"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/SHA256": {
+  "abstract" : [
+    {
+      "text" : "The SHA-2 (Secure Hash Algorithm 2) hash with a 256-bit digest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SHA256"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA256",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HashAlgorithm.SHA256",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm\/sha256"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/SHA512": {
+  "abstract" : [
+    {
+      "text" : "The SHA-2 (Secure Hash Algorithm 2) hash with a 512-bit digest.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SHA512"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA512",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "HashAlgorithm.SHA512",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm\/sha512"
+},
+"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hashalgorithm\/init(rawvalue:)"
+}
+}
+}

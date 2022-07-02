@@ -1,0 +1,528 @@
+{
+  "abstract" : [
+    {
+      "text" : "An error that may occur when using the HOTP or TOTP generators.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:11OneTimePass8OTPErrorO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "OTPError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "OneTimePass"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "OTPError"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "OTPError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "OTPError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/SQ",
+        "doc:\/\/OneTimePass\/s5ErrorP",
+        "doc:\/\/OneTimePass\/SH",
+        "doc:\/\/OneTimePass\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/counterMissing",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/creatingOTP",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/creatingURLComponents",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/decodingSecret",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/invalidScheme",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/invalidType",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/secretMissing",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/wrongNumberOfDigits",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/zeroPeriod"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Equatable-Implementations",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Error-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/onetimepass\/otperror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://OneTimePass/SH": {
+  "identifier" : "doc:\/\/OneTimePass\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/SQ": {
+  "identifier" : "doc:\/\/OneTimePass\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/documentation/OneTimePass": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "OneTimePass",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError": {
+  "abstract" : [
+    {
+      "text" : "An error that may occur when using the HOTP or TOTP generators.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OTPError"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OTPError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OTPError",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/equatable-implementations"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/Error-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Error-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Error Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/error-implementations"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/counterMissing": {
+  "abstract" : [
+    {
+      "text" : "The provided URL string does not have the ",
+      "type" : "text"
+    },
+    {
+      "code" : "counter",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " query item.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "counterMissing"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/counterMissing",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.counterMissing",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/countermissing"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/creatingOTP": {
+  "abstract" : [
+    {
+      "text" : "Could not create a one-time password code.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "creatingOTP"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/creatingOTP",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.creatingOTP",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/creatingotp"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/creatingURLComponents": {
+  "abstract" : [
+    {
+      "text" : "Could not create ",
+      "type" : "text"
+    },
+    {
+      "code" : "URLComponents",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the provided URL string.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "creatingURLComponents"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/creatingURLComponents",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.creatingURLComponents",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/creatingurlcomponents"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/decodingSecret": {
+  "abstract" : [
+    {
+      "text" : "Could not decode the secret from Base-32 to bytes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "decodingSecret"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/decodingSecret",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.decodingSecret",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/decodingsecret"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/invalidScheme": {
+  "abstract" : [
+    {
+      "text" : "The scheme in the URL string is invalid. The sheme has to be ",
+      "type" : "text"
+    },
+    {
+      "code" : "otpauth",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "invalidScheme"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/invalidScheme",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.invalidScheme",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/invalidscheme"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/invalidType": {
+  "abstract" : [
+    {
+      "text" : "The type of generator in the URL string is invalid.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "invalidType"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/invalidType",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.invalidType",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/invalidtype"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/secretMissing": {
+  "abstract" : [
+    {
+      "text" : "The provided URL string does not have the ",
+      "type" : "text"
+    },
+    {
+      "code" : "secret",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " query item.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "secretMissing"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/secretMissing",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.secretMissing",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/secretmissing"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/wrongNumberOfDigits": {
+  "abstract" : [
+    {
+      "text" : "The provided number of digits is incorrect.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "The number of digits has to be between 1 and 10.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "wrongNumberOfDigits"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/wrongNumberOfDigits",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.wrongNumberOfDigits",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/wrongnumberofdigits"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/zeroPeriod": {
+  "abstract" : [
+    {
+      "text" : "The provided period is incorrect.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "The period has to be greater than zero.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "zeroPeriod"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/zeroPeriod",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.zeroPeriod",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/zeroperiod"
+},
+"doc://OneTimePass/s5ErrorP": {
+  "identifier" : "doc:\/\/OneTimePass\/s5ErrorP",
+  "title" : "Swift.Error",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/s8SendableP": {
+  "identifier" : "doc:\/\/OneTimePass\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

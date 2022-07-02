@@ -1,0 +1,188 @@
+{
+  "abstract" : [
+    {
+      "text" : "The provided URL string does not have the ",
+      "type" : "text"
+    },
+    {
+      "code" : "counter",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " query item.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/counterMissing"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:11OneTimePass8OTPErrorO14counterMissingyA2CmF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "counterMissing"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "OneTimePass"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Case",
+    "symbolKind" : "case",
+    "title" : "OTPError.counterMissing"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "case"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "counterMissing"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/onetimepass\/otperror\/countermissing"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://OneTimePass/documentation/OneTimePass": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "OneTimePass",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError": {
+  "abstract" : [
+    {
+      "text" : "An error that may occur when using the HOTP or TOTP generators.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "OTPError"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "OTPError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "OTPError",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror"
+},
+"doc://OneTimePass/documentation/OneTimePass/OTPError/counterMissing": {
+  "abstract" : [
+    {
+      "text" : "The provided URL string does not have the ",
+      "type" : "text"
+    },
+    {
+      "code" : "counter",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " query item.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "counterMissing"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/counterMissing",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "OTPError.counterMissing",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/otperror\/countermissing"
+}
+}
+}
