@@ -137,16 +137,19 @@ final class TOTPTests: XCTestCase {
         let task = Task { @MainActor in
             var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
             totp.currentDateProvider = { Date(timeIntervalSince1970: 1) }
-            var code: String? = try totp.generateCode()
-            XCTAssertEqual(code, "84755224")
+            XCTAssertEqual(try totp.generateCode(), "84755224")
 
             var asyncIterator = totp.codes.makeAsyncIterator()
 
-            code = try await asyncIterator.next()
-            XCTAssertEqual(code, "94287082")
+            var code = try await asyncIterator.next()
+            XCTAssertEqual(code?.code, "94287082")
+            XCTAssertEqual(code?.dateInterval.start, Date(timeIntervalSince1970: 5.0))
+            XCTAssertEqual(code?.dateInterval.end, Date(timeIntervalSince1970: 10.0))
 
             code = try await asyncIterator.next()
-            XCTAssertEqual(code, "37359152")
+            XCTAssertEqual(code?.code, "37359152")
+            XCTAssertEqual(code?.dateInterval.start, Date(timeIntervalSince1970: 10.0))
+            XCTAssertEqual(code?.dateInterval.end, Date(timeIntervalSince1970: 15.0))
         }
 
         try await task.value

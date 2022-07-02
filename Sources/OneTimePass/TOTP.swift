@@ -164,23 +164,31 @@ public struct TOTP {
         return try generateCode(date: currentDateProvider())
     }
 
-    /// Returns an async sequence of one-time password codes (the current code is **not** included).
-    public var codes: AsyncThrowingStream<String, Error> {
+    /// Returns an async sequence of one-time password codes
+    /// with the date intervals they are valid in.
+    ///
+    /// - Note: The current code is **not** included
+    public var codes: AsyncThrowingStream<(code: String, dateInterval: DateInterval), Error> {
         AsyncThrowingStream(bufferingPolicy: .bufferingNewest(1)) { continuation in
             let period = Double(period)
             let fireDate = lastGenerationDate.addingTimeInterval(period)
 
-            var lastGenerationData = fireDate.addingTimeInterval(-period)
+            var lastGenerationDate = fireDate.addingTimeInterval(-period)
 
             let timer = Timer(fire: fireDate, interval: period, repeats: true) { timer in
-                let generationDate = lastGenerationData.addingTimeInterval(period)
-                lastGenerationData = generationDate
+                let generationDate = lastGenerationDate.addingTimeInterval(period)
                 do {
-                    continuation.yield(try generateCode(date: generationDate))
+                    let code = try generateCode(date: generationDate)
+                    let dateInterval = DateInterval(
+                        start: generationDate,
+                        end: generationDate.addingTimeInterval(period)
+                    )
+                    continuation.yield((code, dateInterval))
                 } catch {
                     timer.invalidate()
                     continuation.finish(throwing: error)
                 }
+                lastGenerationDate = generationDate
             }
             continuation.onTermination = { _ in
                 timer.invalidate()
