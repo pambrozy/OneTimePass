@@ -23,8 +23,7 @@ let package = Package(
         .library(
             name: "OneTimePass",
             targets: ["OneTimePass"]
-        ),
-        .executable(name: "OneTimePassCLI", targets: ["OneTimePassCLI"])
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0" ..< "3.0.0")
@@ -39,7 +38,6 @@ let package = Package(
         .testTarget(
             name: "OneTimePassTests",
             dependencies: ["OneTimePass"]
-        ),
-        .executableTarget(name: "OneTimePassCLI", dependencies: [.target(name: "OneTimePass")])
+        )
     ]
 )
