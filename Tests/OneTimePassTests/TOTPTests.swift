@@ -40,27 +40,6 @@ final class TOTPTests: XCTestCase {
         0x37, 0x38, 0x39, 0x30, 0x31, 0x32, 0x33, 0x34
     ]
 
-    private static let expectedCodes = [
-        TestCode(timestamp: 59.0, code: "94287082", validFrom: 30.0, validTo: 60.0, mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 59.0, code: "46119246", validFrom: 30.0, validTo: 60.0, mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 59.0, code: "90693936", validFrom: 30.0, validTo: 60.0, mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 1111111109.0, code: "07081804", validFrom: 1111111080.0, validTo: 1111111110.0, mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 1111111109.0, code: "68084774", validFrom: 1111111080.0, validTo: 1111111110.0, mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 1111111109.0, code: "25091201", validFrom: 1111111080.0, validTo: 1111111110.0, mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 1111111111.0, code: "14050471", validFrom: 1111111110.0, validTo: 1111111140.0, mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 1111111111.0, code: "67062674", validFrom: 1111111110.0, validTo: 1111111140.0, mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 1111111111.0, code: "99943326", validFrom: 1111111110.0, validTo: 1111111140.0, mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 1234567890.0, code: "89005924", validFrom: 1234567890.0, validTo: 1234567920.0, mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 1234567890.0, code: "91819424", validFrom: 1234567890.0, validTo: 1234567920.0, mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 1234567890.0, code: "93441116", validFrom: 1234567890.0, validTo: 1234567920.0, mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 2000000000.0, code: "69279037", validFrom: 1999999980.0, validTo: 2000000010.0, mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 2000000000.0, code: "90698825", validFrom: 1999999980.0, validTo: 2000000010.0, mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 2000000000.0, code: "38618901", validFrom: 1999999980.0, validTo: 2000000010.0, mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 20000000000.0, code: "65353130", validFrom: 19999999980.0, validTo: 20000000010.0, mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 20000000000.0, code: "77737706", validFrom: 19999999980.0, validTo: 20000000010.0, mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 20000000000.0, code: "47863826", validFrom: 19999999980.0, validTo: 20000000010.0, mode: .SHA512, secret: secretSHA512)
-    ]
-
     private static let validURL =
     "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
 
@@ -199,4 +178,155 @@ final class TOTPTests: XCTestCase {
         XCTAssertEqual(totp1, totp2)
         _ = totp1.hashValue
     }
+}
+
+// MARK: - Test codes
+
+extension TOTPTests {
+    private static let expectedCodes = [
+        TestCode(
+            timestamp: 59.0,
+            code: "94287082",
+            validFrom: 30.0,
+            validTo: 60.0,
+            mode: .SHA1,
+            secret: secretSHA1
+        ),
+        TestCode(
+            timestamp: 59.0,
+            code: "46119246",
+            validFrom: 30.0,
+            validTo: 60.0,
+            mode: .SHA256,
+            secret: secretSHA256
+        ),
+        TestCode(
+            timestamp: 59.0,
+            code: "90693936",
+            validFrom: 30.0,
+            validTo: 60.0,
+            mode: .SHA512,
+            secret: secretSHA512
+        ),
+        TestCode(
+            timestamp: 1111111109.0,
+            code: "07081804",
+            validFrom: 1111111080.0,
+            validTo: 1111111110.0,
+            mode: .SHA1,
+            secret: secretSHA1
+        ),
+        TestCode(
+            timestamp: 1111111109.0,
+            code: "68084774",
+            validFrom: 1111111080.0,
+            validTo: 1111111110.0,
+            mode: .SHA256,
+            secret: secretSHA256
+        ),
+        TestCode(
+            timestamp: 1111111109.0,
+            code: "25091201",
+            validFrom: 1111111080.0,
+            validTo: 1111111110.0,
+            mode: .SHA512,
+            secret: secretSHA512
+        ),
+        TestCode(
+            timestamp: 1111111111.0,
+            code: "14050471",
+            validFrom: 1111111110.0,
+            validTo: 1111111140.0,
+            mode: .SHA1,
+            secret: secretSHA1
+        ),
+        TestCode(
+            timestamp: 1111111111.0,
+            code: "67062674",
+            validFrom: 1111111110.0,
+            validTo: 1111111140.0,
+            mode: .SHA256,
+            secret: secretSHA256
+        ),
+        TestCode(
+            timestamp: 1111111111.0,
+            code: "99943326",
+            validFrom: 1111111110.0,
+            validTo: 1111111140.0,
+            mode: .SHA512,
+            secret: secretSHA512
+        ),
+        TestCode(
+            timestamp: 1234567890.0,
+            code: "89005924",
+            validFrom: 1234567890.0,
+            validTo: 1234567920.0,
+            mode: .SHA1,
+            secret: secretSHA1
+        ),
+        TestCode(
+            timestamp: 1234567890.0,
+            code: "91819424",
+            validFrom: 1234567890.0,
+            validTo: 1234567920.0,
+            mode: .SHA256,
+            secret: secretSHA256
+        ),
+        TestCode(
+            timestamp: 1234567890.0,
+            code: "93441116",
+            validFrom: 1234567890.0,
+            validTo: 1234567920.0,
+            mode: .SHA512,
+            secret: secretSHA512
+        ),
+        TestCode(
+            timestamp: 2000000000.0,
+            code: "69279037",
+            validFrom: 1999999980.0,
+            validTo: 2000000010.0,
+            mode: .SHA1,
+            secret: secretSHA1
+        ),
+        TestCode(
+            timestamp: 2000000000.0,
+            code: "90698825",
+            validFrom: 1999999980.0,
+            validTo: 2000000010.0,
+            mode: .SHA256,
+            secret: secretSHA256
+        ),
+        TestCode(
+            timestamp: 2000000000.0,
+            code: "38618901",
+            validFrom: 1999999980.0,
+            validTo: 2000000010.0,
+            mode: .SHA512,
+            secret: secretSHA512
+        ),
+        TestCode(
+            timestamp: 20000000000.0,
+            code: "65353130",
+            validFrom: 19999999980.0,
+            validTo: 20000000010.0,
+            mode: .SHA1,
+            secret: secretSHA1
+        ),
+        TestCode(
+            timestamp: 20000000000.0,
+            code: "77737706",
+            validFrom: 19999999980.0,
+            validTo: 20000000010.0,
+            mode: .SHA256,
+            secret: secretSHA256
+        ),
+        TestCode(
+            timestamp: 20000000000.0,
+            code: "47863826",
+            validFrom: 19999999980.0,
+            validTo: 20000000010.0,
+            mode: .SHA512,
+            secret: secretSHA512
+        )
+    ]
 }
