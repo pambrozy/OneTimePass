@@ -11,6 +11,18 @@ import Foundation
 
 /// The Time-based one-time password algorithm.
 public struct TOTP {
+    /// The code and the dates it is valid in.
+    public struct Code {
+        /// The one-time password code.
+        public let code: String
+
+        /// The date the code is valid from.
+        public let validFrom: Date
+
+        /// The date at which a new code will be generated.
+        public let validTo: Date
+    }
+
     /// The secret.
     public let secret: [UInt8]
 
@@ -130,7 +142,7 @@ public struct TOTP {
     /// Generates a code for a given date.
     /// - Parameter date: The date at which the code should be valid.
     /// - Returns: The generated one-time password code.
-    public func generateCode(date: Date) throws -> String {
+    public func generateCode(date: Date) throws -> Code {
         let dividedTimestamp = Int64(floor(date.timeIntervalSince1970 / Double(period)))
         let data = withUnsafeBytes(of: dividedTimestamp.bigEndian, Array.init)
         let bytes = algorithm.authenticationCode(for: data, using: SymmetricKey(data: Array(secret)))
@@ -155,20 +167,26 @@ public struct TOTP {
 
         let leadingZeros = String(repeating: "0", count: max(digits - code.count, 0))
 
-        return leadingZeros + code
+        let validFrom = Date(timeIntervalSince1970: Double(dividedTimestamp) * Double(period))
+        let validTo = validFrom.addingTimeInterval(Double(period))
+
+        return Code(
+            code: leadingZeros + code,
+            validFrom: validFrom,
+            validTo: validTo
+        )
     }
 
     /// Generates a code for the current date.
     /// - Returns: The generated one-time password code.
-    public func generateCode() throws -> String {
+    public func generateCode() throws -> Code {
         return try generateCode(date: currentDateProvider())
     }
 
-    /// Returns an async sequence of one-time password codes
-    /// with the date intervals they are valid in.
+    /// Returns an async sequence of one-time password codes.
     ///
     /// - Note: The current code is **not** included
-    public var codes: AsyncThrowingStream<(code: String, dateInterval: DateInterval), Error> {
+    public var codes: AsyncThrowingStream<Code, Error> {
         AsyncThrowingStream(bufferingPolicy: .bufferingNewest(1)) { continuation in
             let period = Double(period)
             let fireDate = lastGenerationDate.addingTimeInterval(period)
@@ -178,12 +196,7 @@ public struct TOTP {
             let timer = Timer(fire: fireDate, interval: period, repeats: true) { timer in
                 let generationDate = lastGenerationDate.addingTimeInterval(period)
                 do {
-                    let code = try generateCode(date: generationDate)
-                    let dateInterval = DateInterval(
-                        start: generationDate,
-                        end: generationDate.addingTimeInterval(period)
-                    )
-                    continuation.yield((code, dateInterval))
+                    continuation.yield(try generateCode(date: generationDate))
                 } catch {
                     timer.invalidate()
                     continuation.finish(throwing: error)
@@ -213,14 +226,14 @@ public struct TOTP {
 
         let now = currentDateProvider()
 
-        if try generateCode(date: now) == code {
+        if try generateCode(date: now).code == code {
             return true
         }
 
         if acceptPreviousCodes > 0 {
             for number in (1...acceptPreviousCodes) {
                 let date = now.addingTimeInterval(-1.0 * Double(number * Int(period)))
-                if try generateCode(date: date) == code {
+                if try generateCode(date: date).code == code {
                     return true
                 }
             }
@@ -229,7 +242,7 @@ public struct TOTP {
         if acceptNextCodes > 0 {
             for number in (1...acceptNextCodes) {
                 let date = now.addingTimeInterval(Double(number * Int(period)))
-                if try generateCode(date: date) == code {
+                if try generateCode(date: date).code == code {
                     return true
                 }
             }

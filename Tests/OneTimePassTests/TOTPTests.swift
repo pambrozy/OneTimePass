@@ -13,6 +13,8 @@ final class TOTPTests: XCTestCase {
     struct TestCode {
         let timestamp: Double
         let code: String
+        let validFrom: Double
+        let validTo: Double
         let mode: HashAlgorithm
         let secret: [UInt8]
     }
@@ -39,24 +41,24 @@ final class TOTPTests: XCTestCase {
     ]
 
     private static let expectedCodes = [
-        TestCode(timestamp: 59, code: "94287082", mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 59, code: "46119246", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 59, code: "90693936", mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 1111111109, code: "07081804", mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 1111111109, code: "68084774", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 1111111109, code: "25091201", mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 1111111111, code: "14050471", mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 1111111111, code: "67062674", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 1111111111, code: "99943326", mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 1234567890, code: "89005924", mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 1234567890, code: "91819424", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 1234567890, code: "93441116", mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 2000000000, code: "69279037", mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 2000000000, code: "90698825", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 2000000000, code: "38618901", mode: .SHA512, secret: secretSHA512),
-        TestCode(timestamp: 20000000000, code: "65353130", mode: .SHA1, secret: secretSHA1),
-        TestCode(timestamp: 20000000000, code: "77737706", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 20000000000, code: "47863826", mode: .SHA512, secret: secretSHA512)
+        TestCode(timestamp: 59.0, code: "94287082", validFrom: 30.0, validTo: 60.0, mode: .SHA1, secret: secretSHA1),
+        TestCode(timestamp: 59.0, code: "46119246", validFrom: 30.0, validTo: 60.0, mode: .SHA256, secret: secretSHA256),
+        TestCode(timestamp: 59.0, code: "90693936", validFrom: 30.0, validTo: 60.0, mode: .SHA512, secret: secretSHA512),
+        TestCode(timestamp: 1111111109.0, code: "07081804", validFrom: 1111111080.0, validTo: 1111111110.0, mode: .SHA1, secret: secretSHA1),
+        TestCode(timestamp: 1111111109.0, code: "68084774", validFrom: 1111111080.0, validTo: 1111111110.0, mode: .SHA256, secret: secretSHA256),
+        TestCode(timestamp: 1111111109.0, code: "25091201", validFrom: 1111111080.0, validTo: 1111111110.0, mode: .SHA512, secret: secretSHA512),
+        TestCode(timestamp: 1111111111.0, code: "14050471", validFrom: 1111111110.0, validTo: 1111111140.0, mode: .SHA1, secret: secretSHA1),
+        TestCode(timestamp: 1111111111.0, code: "67062674", validFrom: 1111111110.0, validTo: 1111111140.0, mode: .SHA256, secret: secretSHA256),
+        TestCode(timestamp: 1111111111.0, code: "99943326", validFrom: 1111111110.0, validTo: 1111111140.0, mode: .SHA512, secret: secretSHA512),
+        TestCode(timestamp: 1234567890.0, code: "89005924", validFrom: 1234567890.0, validTo: 1234567920.0, mode: .SHA1, secret: secretSHA1),
+        TestCode(timestamp: 1234567890.0, code: "91819424", validFrom: 1234567890.0, validTo: 1234567920.0, mode: .SHA256, secret: secretSHA256),
+        TestCode(timestamp: 1234567890.0, code: "93441116", validFrom: 1234567890.0, validTo: 1234567920.0, mode: .SHA512, secret: secretSHA512),
+        TestCode(timestamp: 2000000000.0, code: "69279037", validFrom: 1999999980.0, validTo: 2000000010.0, mode: .SHA1, secret: secretSHA1),
+        TestCode(timestamp: 2000000000.0, code: "90698825", validFrom: 1999999980.0, validTo: 2000000010.0, mode: .SHA256, secret: secretSHA256),
+        TestCode(timestamp: 2000000000.0, code: "38618901", validFrom: 1999999980.0, validTo: 2000000010.0, mode: .SHA512, secret: secretSHA512),
+        TestCode(timestamp: 20000000000.0, code: "65353130", validFrom: 19999999980.0, validTo: 20000000010.0, mode: .SHA1, secret: secretSHA1),
+        TestCode(timestamp: 20000000000.0, code: "77737706", validFrom: 19999999980.0, validTo: 20000000010.0, mode: .SHA256, secret: secretSHA256),
+        TestCode(timestamp: 20000000000.0, code: "47863826", validFrom: 19999999980.0, validTo: 20000000010.0, mode: .SHA512, secret: secretSHA512)
     ]
 
     private static let validURL =
@@ -121,7 +123,9 @@ final class TOTPTests: XCTestCase {
         for testCode in Self.expectedCodes {
             let totp = try TOTP(secret: testCode.secret, algorithm: testCode.mode, digits: 8)
             let code = try totp.generateCode(date: Date(timeIntervalSince1970: testCode.timestamp))
-            XCTAssertEqual(code, testCode.code)
+            XCTAssertEqual(code.code, testCode.code)
+            XCTAssertEqual(code.validFrom, Date(timeIntervalSince1970: testCode.validFrom))
+            XCTAssertEqual(code.validTo, Date(timeIntervalSince1970: testCode.validTo))
         }
     }
 
@@ -129,27 +133,32 @@ final class TOTPTests: XCTestCase {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
         totp.currentDateProvider = { Date(timeIntervalSince1970: 59) }
 
-        XCTAssertEqual(try totp.generateCode(), "94287082")
-
+        let code = try totp.generateCode()
+        XCTAssertEqual(try totp.generateCode().code, "94287082")
+        XCTAssertEqual(code.validFrom, Date(timeIntervalSince1970: 30))
+        XCTAssertEqual(code.validTo, Date(timeIntervalSince1970: 60))
     }
 
     @MainActor
     func testCodeStream() async throws {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
         totp.currentDateProvider = { Date(timeIntervalSince1970: 1) }
-        XCTAssertEqual(try totp.generateCode(), "84755224")
+        let initialCode = try totp.generateCode()
+        XCTAssertEqual(initialCode.code, "84755224")
+        XCTAssertEqual(initialCode.validFrom, Date(timeIntervalSince1970: 0))
+        XCTAssertEqual(initialCode.validTo, Date(timeIntervalSince1970: 5))
 
         var asyncIterator = totp.codes.makeAsyncIterator()
 
         var code = try await asyncIterator.next()
         XCTAssertEqual(code?.code, "94287082")
-        XCTAssertEqual(code?.dateInterval.start, Date(timeIntervalSince1970: 5.0))
-        XCTAssertEqual(code?.dateInterval.end, Date(timeIntervalSince1970: 10.0))
+        XCTAssertEqual(code?.validFrom, Date(timeIntervalSince1970: 5.0))
+        XCTAssertEqual(code?.validTo, Date(timeIntervalSince1970: 10.0))
 
         code = try await asyncIterator.next()
         XCTAssertEqual(code?.code, "37359152")
-        XCTAssertEqual(code?.dateInterval.start, Date(timeIntervalSince1970: 10.0))
-        XCTAssertEqual(code?.dateInterval.end, Date(timeIntervalSince1970: 15.0))
+        XCTAssertEqual(code?.validFrom, Date(timeIntervalSince1970: 10.0))
+        XCTAssertEqual(code?.validTo, Date(timeIntervalSince1970: 15.0))
     }
 
     func testValidate() throws {
