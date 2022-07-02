@@ -138,6 +138,31 @@ final class TOTPTests: XCTestCase {
 //        print("finished")
 //    }
 
+    func testCodeStream() async throws {
+        var totpx = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
+        print("t1", try totpx.generateCode(date: Date(timeIntervalSince1970: 1 + 0)))
+        print("t2", try totpx.generateCode(date: Date(timeIntervalSince1970: 1 + 5)))
+        print("t3", try totpx.generateCode(date: Date(timeIntervalSince1970: 1 + 5 + 5)))
+
+
+        let task = Task { @MainActor in
+            var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
+            totp.currentDateProvider = { Date(timeIntervalSince1970: 1) }
+            var code: String? = try totp.generateCode()
+            XCTAssertEqual(code, "84755224")
+
+            var asyncIterator = totp.codes.makeAsyncIterator()
+
+            code = try await asyncIterator.next()
+            XCTAssertEqual(code, "94287082")
+
+            code = try await asyncIterator.next()
+            XCTAssertEqual(code, "37359152")
+        }
+
+        try await task.value
+    }
+
     func testValidate() throws {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
         totp.currentDateProvider = { Date(timeIntervalSince1970: 1 + (3 * 30)) }

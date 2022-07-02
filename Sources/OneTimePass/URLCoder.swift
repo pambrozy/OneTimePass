@@ -67,15 +67,7 @@ extension URLCoder {
             return (nil, nil)
         }
 
-        let parts: [String]
-
-        if label.contains(":") {
-            parts = label.components(separatedBy: ":")
-        } else if label.contains("%3A") {
-            parts = label.components(separatedBy: "%3A")
-        } else {
-            parts = [label]
-        }
+        let parts = label.components(separatedBy: ":")
 
         switch parts.count {
         case 2:
