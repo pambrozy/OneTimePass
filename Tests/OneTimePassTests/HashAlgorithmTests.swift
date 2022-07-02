@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  HashAlgorithmTests.swift
+//  OneTimePass
 //
-//  Created by Przemek Ambroży on 27/06/2022.
+//  Created by Przemek Ambroży on 27.06.2022.
+//  Copyright © 2022 Przemysław Ambroży
 //
 
 import Crypto

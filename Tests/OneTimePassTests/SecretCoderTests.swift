@@ -1,12 +1,13 @@
 //
-//  File.swift
-//  
+//  SecretCoderTests.swift
+//  OneTimePass
 //
-//  Created by Przemek Ambroży on 29/06/2022.
+//  Created by Przemek Ambroży on 29.06.2022.
+//  Copyright © 2022 Przemysław Ambroży
 //
 
-import XCTest
 import OneTimePass
+import XCTest
 
 final class SecretCoderTests: XCTestCase {
     func testDecoder() throws {

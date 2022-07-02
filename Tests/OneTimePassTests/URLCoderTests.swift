@@ -1,12 +1,12 @@
 //
-//  File.swift
-//  
+//  URLCoderTests.swift
+//  OneTimePass
 //
-//  Created by Przemek Ambroży on 02/07/2022.
+//  Created by Przemek Ambroży on 02.07.2022.
+//  Copyright © 2022 Przemysław Ambroży
 //
 
 import Foundation
-
 @testable import OneTimePass
 import XCTest
 

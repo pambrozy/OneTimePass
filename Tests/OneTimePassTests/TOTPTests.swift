@@ -1,12 +1,13 @@
 //
-//  File.swift
+//  TOTPTests.swift
+//  OneTimePass
 //
-//
-//  Created by Przemek Ambroży on 29/06/2022.
+//  Created by Przemek Ambroży on 29.06.2022.
+//  Copyright © 2022 Przemysław Ambroży
 //
 
-import XCTest
 import OneTimePass
+import XCTest
 
 final class TOTPTests: XCTestCase {
     struct TestCode {
@@ -55,8 +56,11 @@ final class TOTPTests: XCTestCase {
         TestCode(timestamp: 2000000000, code: "38618901", mode: .SHA512, secret: secretSHA512),
         TestCode(timestamp: 20000000000, code: "65353130", mode: .SHA1, secret: secretSHA1),
         TestCode(timestamp: 20000000000, code: "77737706", mode: .SHA256, secret: secretSHA256),
-        TestCode(timestamp: 20000000000, code: "47863826", mode: .SHA512, secret: secretSHA512),
+        TestCode(timestamp: 20000000000, code: "47863826", mode: .SHA512, secret: secretSHA512)
     ]
+
+    private static let validURL =
+    "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
 
     func testInitWithData() throws {
         XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 0)) { error in
@@ -87,9 +91,9 @@ final class TOTPTests: XCTestCase {
         }
         _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=10")
 
-        let totp = try TOTP(
-            urlString: "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
-        )
+        let urlString =
+            "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
+        let totp = try TOTP(urlString: urlString)
         XCTAssertEqual(totp.secret, [0x41])
         XCTAssertEqual(totp.algorithm, HashAlgorithm.SHA512)
         XCTAssertEqual(totp.digits, 10)
@@ -104,11 +108,11 @@ final class TOTPTests: XCTestCase {
             algorithm: .SHA512,
             digits: 7,
             period: 60,
-            issuer: "Example",
-            account: "user@example.com"
+            issuer: "iss",
+            account: "user"
         )
 
-        let expectedString = "otpauth://totp/Example:user@example.com?secret=IE&algorithm=SHA512&digits=7&period=60&issuer=Example"
+        let expectedString = "otpauth://totp/iss:user?secret=IE&algorithm=SHA512&digits=7&period=60&issuer=iss"
 
         XCTAssertEqual(totp.urlString, expectedString)
     }
@@ -129,22 +133,7 @@ final class TOTPTests: XCTestCase {
 
     }
 
-//    func testCodeStream() async throws {
-//        let totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
-//        for try await code in totp.codes {
-//            print("CODE", code)
-//            break
-//        }
-//        print("finished")
-//    }
-
     func testCodeStream() async throws {
-        var totpx = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
-        print("t1", try totpx.generateCode(date: Date(timeIntervalSince1970: 1 + 0)))
-        print("t2", try totpx.generateCode(date: Date(timeIntervalSince1970: 1 + 5)))
-        print("t3", try totpx.generateCode(date: Date(timeIntervalSince1970: 1 + 5 + 5)))
-
-
         let task = Task { @MainActor in
             var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
             totp.currentDateProvider = { Date(timeIntervalSince1970: 1) }
@@ -167,7 +156,6 @@ final class TOTPTests: XCTestCase {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
         totp.currentDateProvider = { Date(timeIntervalSince1970: 1 + (3 * 30)) }
 
-
         XCTAssertEqual(try totp.validate("123456", acceptPreviousCodes: 0, acceptNextCodes: 0), false)
         XCTAssertEqual(try totp.validate("123456aa", acceptPreviousCodes: 0, acceptNextCodes: 0), false)
         XCTAssertEqual(try totp.validate("26969429", acceptPreviousCodes: 0, acceptNextCodes: 0), true)
@@ -189,9 +177,16 @@ final class TOTPTests: XCTestCase {
 
     func testHashable() throws {
         let totp1 = try TOTP(
-            urlString: "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
+            urlString: "otpauth://totp/iss:user?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
         )
-        let totp2 = try TOTP(secret: [0x41], algorithm: .SHA512, digits: 10, period: 60, issuer: "Example", account: "user@example.com")
+        let totp2 = try TOTP(
+            secret: [0x41],
+            algorithm: .SHA512,
+            digits: 10,
+            period: 60,
+            issuer: "iss",
+            account: "user"
+        )
         XCTAssertEqual(totp1, totp2)
         _ = totp1.hashValue
     }

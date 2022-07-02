@@ -1,12 +1,13 @@
 //
-//  File.swift
-//  
+//  HOTPTests.swift
+//  OneTimePass
 //
-//  Created by Przemek Ambroży on 29/06/2022.
+//  Created by Przemek Ambroży on 29.06.2022.
+//  Copyright © 2022 Przemysław Ambroży
 //
 
-import XCTest
 import OneTimePass
+import XCTest
 
 final class HOTPTests: XCTestCase {
     private static let secret: [UInt8] = [
@@ -54,9 +55,9 @@ final class HOTPTests: XCTestCase {
 
         _ = try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP&counter=0")
 
-        let hotp = try HOTP(
-            urlString: "otpauth://hotp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=7&counter=123"
-        )
+        let urlString =
+            "otpauth://hotp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=7&counter=123"
+        let hotp = try HOTP(urlString: urlString)
         XCTAssertEqual(hotp.secret, [0x41])
         XCTAssertEqual(hotp.counter, 123)
         XCTAssertEqual(hotp.algorithm, HashAlgorithm.SHA512)
@@ -71,11 +72,11 @@ final class HOTPTests: XCTestCase {
             counter: 123,
             algorithm: .SHA512,
             digits: 7,
-            issuer: "Example",
-            account: "user@example.com"
+            issuer: "iss",
+            account: "user"
         )
 
-        let expectedString = "otpauth://hotp/Example:user@example.com?secret=IE&algorithm=SHA512&digits=7&counter=123&issuer=Example"
+        let expectedString = "otpauth://hotp/iss:user?secret=IE&algorithm=SHA512&digits=7&counter=123&issuer=iss"
 
         XCTAssertEqual(hotp.urlString, expectedString)
     }
