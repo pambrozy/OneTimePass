@@ -170,9 +170,13 @@ public struct TOTP {
             let period = Double(period)
             let fireDate = lastGenerationDate.addingTimeInterval(period)
 
+            var lastGenerationData = fireDate.addingTimeInterval(-period)
+
             let timer = Timer(fire: fireDate, interval: period, repeats: true) { timer in
+                let generationDate = lastGenerationData.addingTimeInterval(period)
+                lastGenerationData = generationDate
                 do {
-                    continuation.yield(try generateCode())
+                    continuation.yield(try generateCode(date: generationDate))
                 } catch {
                     timer.invalidate()
                     continuation.finish(throwing: error)

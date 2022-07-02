@@ -58,58 +58,61 @@ final class TOTPTests: XCTestCase {
         TestCode(timestamp: 20000000000, code: "47863826", mode: .SHA512, secret: secretSHA512),
     ]
 
-//    func testInitWithData() throws {
-//        XCTAssertThrowsError(try HOTP(secret: Self.secret, counter: 0, digits: 0)) { error in
-//            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
-//        }
-//        XCTAssertThrowsError(try HOTP(secret: Self.secret, counter: 0, digits: 11)) { error in
-//            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
-//        }
-//        _ = try HOTP(secret: Self.secret, counter: 0, digits: 1)
-//        _ = try HOTP(secret: Self.secret, counter: 0, digits: 10)
-//    }
-//
-//    func testInitWithURL() throws {
-//        XCTAssertThrowsError(try HOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&counter=0")) { error in
-//            XCTAssertEqual(error as? OTPError, OTPError.invalidType)
-//        }
-//        XCTAssertThrowsError(try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP")) { error in
-//            XCTAssertEqual(error as? OTPError, OTPError.counterMissing)
-//        }
-//        XCTAssertThrowsError(
-//            try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP&counter=0&digits=11")
-//        ) { error in
-//            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
-//        }
-//
-//        _ = try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP&counter=0")
-//
-//        let hotp = try HOTP(
-//            urlString: "otpauth://hotp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=7&counter=123"
-//        )
-//        XCTAssertEqual(hotp.secret, [0x41])
-//        XCTAssertEqual(hotp.counter, 123)
-//        XCTAssertEqual(hotp.algorithm, HashAlgorithm.SHA512)
-//        XCTAssertEqual(hotp.digits, 7)
-//        XCTAssertEqual(hotp.issuer, "Example")
-//        XCTAssertEqual(hotp.account, "user@example.com")
-//    }
-//
-//    func testURLString() throws {
-//        let hotp = try HOTP(
-//            secret: [0x41],
-//            counter: 123,
-//            algorithm: .SHA512,
-//            digits: 7,
-//            issuer: "Example",
-//            account: "user@example.com"
-//        )
-//
-//        let expectedString = "otpauth://hotp/Example:user@example.com?secret=IE&algorithm=SHA512&digits=7&counter=123&issuer=Example"
-//
-//        XCTAssertEqual(hotp.urlString, expectedString)
-//    }
-//
+    func testInitWithData() throws {
+        XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 0)) { error in
+            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+        }
+        XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 11)) { error in
+            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+        }
+        XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 6, period: 0)) { error in
+            XCTAssertEqual(error as? OTPError, OTPError.zeroPeriod)
+        }
+        _ = try TOTP(secret: Self.secretSHA1, digits: 6)
+        _ = try TOTP(secret: Self.secretSHA1, digits: 6, period: 10)
+    }
+
+    func testInitWithURL() throws {
+        XCTAssertThrowsError(try TOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP")) { error in
+            XCTAssertEqual(error as? OTPError, OTPError.invalidType)
+        }
+        XCTAssertThrowsError(try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&digits=0")) { error in
+            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+        }
+        _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&digits=8")
+        _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP")
+
+        XCTAssertThrowsError(try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=0")) { error in
+            XCTAssertEqual(error as? OTPError, OTPError.zeroPeriod)
+        }
+        _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=10")
+
+        let totp = try TOTP(
+            urlString: "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
+        )
+        XCTAssertEqual(totp.secret, [0x41])
+        XCTAssertEqual(totp.algorithm, HashAlgorithm.SHA512)
+        XCTAssertEqual(totp.digits, 10)
+        XCTAssertEqual(totp.period, 60)
+        XCTAssertEqual(totp.issuer, "Example")
+        XCTAssertEqual(totp.account, "user@example.com")
+    }
+
+    func testURLString() throws {
+        let totp = try TOTP(
+            secret: [0x41],
+            algorithm: .SHA512,
+            digits: 7,
+            period: 60,
+            issuer: "Example",
+            account: "user@example.com"
+        )
+
+        let expectedString = "otpauth://totp/Example:user@example.com?secret=IE&algorithm=SHA512&digits=7&period=60&issuer=Example"
+
+        XCTAssertEqual(totp.urlString, expectedString)
+    }
+
     func testCodes() throws {
         for testCode in Self.expectedCodes {
             let totp = try TOTP(secret: testCode.secret, algorithm: testCode.mode, digits: 8)
@@ -117,13 +120,54 @@ final class TOTPTests: XCTestCase {
             XCTAssertEqual(code, testCode.code)
         }
     }
-//
-//    func testAutoIncrement() throws {
-//        var hotp = try HOTP(secret: Self.secret, counter: 0, digits: 10)
-//
-//        for (_, expectedCode) in Self.expectedCodes {
-//            let code = try hotp.generateCode()
-//            XCTAssertEqual(code, expectedCode)
+
+    func testCodeNow() throws {
+        var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
+        totp.currentDateProvider = { Date(timeIntervalSince1970: 59) }
+
+        XCTAssertEqual(try totp.generateCode(), "94287082")
+
+    }
+
+//    func testCodeStream() async throws {
+//        let totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
+//        for try await code in totp.codes {
+//            print("CODE", code)
+//            break
 //        }
+//        print("finished")
 //    }
+
+    func testValidate() throws {
+        var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
+        totp.currentDateProvider = { Date(timeIntervalSince1970: 1 + (3 * 30)) }
+
+
+        XCTAssertEqual(try totp.validate("123456", acceptPreviousCodes: 0, acceptNextCodes: 0), false)
+        XCTAssertEqual(try totp.validate("123456aa", acceptPreviousCodes: 0, acceptNextCodes: 0), false)
+        XCTAssertEqual(try totp.validate("26969429", acceptPreviousCodes: 0, acceptNextCodes: 0), true)
+
+        // 1 + (0 * 30): 84755224 INVALID
+        // 1 + (1 * 30): 94287082 VALID    \
+        // 1 + (2 * 30): 37359152 VALID    |   2 previous
+        // 1 + (3 * 30): 26969429 VALID    |<- now
+        // 1 + (4 * 30): 40338314 VALID    /   1 next
+        // 1 + (5 * 30): 68254676 INVALID
+
+        XCTAssertEqual(try totp.validate("84755224", acceptPreviousCodes: 2, acceptNextCodes: 1), false)
+        XCTAssertEqual(try totp.validate("94287082", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
+        XCTAssertEqual(try totp.validate("37359152", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
+        XCTAssertEqual(try totp.validate("26969429", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
+        XCTAssertEqual(try totp.validate("40338314", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
+        XCTAssertEqual(try totp.validate("68254676", acceptPreviousCodes: 2, acceptNextCodes: 1), false)
+    }
+
+    func testHashable() throws {
+        let totp1 = try TOTP(
+            urlString: "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
+        )
+        let totp2 = try TOTP(secret: [0x41], algorithm: .SHA512, digits: 10, period: 60, issuer: "Example", account: "user@example.com")
+        XCTAssertEqual(totp1, totp2)
+        _ = totp1.hashValue
+    }
 }

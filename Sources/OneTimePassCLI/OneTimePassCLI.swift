@@ -25,7 +25,7 @@ struct App {
 //            print("CODE1", code1)
 //            print("CODE2", code2)
 //
-//            let totp = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=5")
+            let totp = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=5")
 //            print("TOTP", try totp.generateCode(date: Date().addingTimeInterval(30.0)))
 //            print("TOTP string", totp.urlString)
 //            print("rep", String(decoding: try JSONEncoder().encode(totp), as: UTF8.self))
@@ -50,14 +50,14 @@ struct App {
 //            print("NOW", try testTotp.generateCode())
             print("TEST", try testTotp.generateCode(date: Date(timeIntervalSince1970: 59)) )
 
-//            var i = 0
-//            for try await code in totp.codes {
-//                print("ASYNC CODE", code)
-//                i += 1
-//                if i >= 2 {
-//                    break
-//                }
-//            }
+            var i = 0
+            for try await code in totp.codes {
+                print("ASYNC CODE", code)
+                i += 1
+                if i >= 2 {
+                    break
+                }
+            }
         } catch {
             print("Error", error)
         }
