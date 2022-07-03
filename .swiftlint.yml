@@ -24,6 +24,9 @@ opt_in_rules:
     - file_header
     - missing_docs
 
+excluded:
+  - Sources/OneTimePass/Documentation.docc
+
 file_header:
   required_pattern: |
                     \/\/
