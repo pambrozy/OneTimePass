@@ -1,0 +1,16 @@
+@Tutorials(name: "Usage") {
+    @Intro(title: "Usage") {
+        Learn how to use the package.
+    }
+    
+    @Chapter(name: "Usage") {
+        Use the package to show the current code to the user.
+        
+        @Image(
+               source: usage.png, 
+               alt: "A view with three labels: \"Current code:\", the generated 6-digit code and a time for which the code is valid."
+        )
+        
+        @TutorialReference(tutorial: "doc:Use-with-SwiftUI")
+    }
+}

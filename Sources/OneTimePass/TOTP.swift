@@ -185,7 +185,7 @@ public struct TOTP {
 
     /// Returns an async sequence of one-time password codes.
     ///
-    /// - Note: The current code is **not** included
+    /// - Note: The current code is **not** included.
     public var codes: AsyncThrowingStream<Code, Error> {
         AsyncThrowingStream(bufferingPolicy: .bufferingNewest(1)) { continuation in
             let period = Double(period)
