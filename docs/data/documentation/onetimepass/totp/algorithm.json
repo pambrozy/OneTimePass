@@ -100,6 +100,20 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/secret",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/digits",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/period",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/issuer",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/account",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/currentDateProvider"
+      ],
+      "title" : "Properties"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -116,7 +130,10 @@
 "references": {
 "doc://OneTimePass/documentation/OneTimePass": {
   "abstract" : [
-
+    {
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
   "kind" : "symbol",
@@ -193,6 +210,47 @@
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp"
 },
+"doc://OneTimePass/documentation/OneTimePass/TOTP/account": {
+  "abstract" : [
+    {
+      "text" : "The account name.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "account"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/account",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "account",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/account"
+},
 "doc://OneTimePass/documentation/OneTimePass/TOTP/algorithm": {
   "abstract" : [
     {
@@ -229,6 +287,199 @@
   "title" : "algorithm",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp\/algorithm"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/currentDateProvider": {
+  "abstract" : [
+    {
+      "text" : "A block of code the generator executes to obtain the current date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "currentDateProvider"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DateV",
+      "text" : "Date"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/currentDateProvider",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "currentDateProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/currentdateprovider"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/digits": {
+  "abstract" : [
+    {
+      "text" : "The number of digits in a one-time password.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "digits"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/digits",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "digits",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/digits"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/issuer": {
+  "abstract" : [
+    {
+      "text" : "The provider of the service the account is associated with.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "issuer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/issuer",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "issuer",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/issuer"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/period": {
+  "abstract" : [
+    {
+      "text" : "The number of seconds the code is valid.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "period"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/period",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "period",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/period"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/secret": {
+  "abstract" : [
+    {
+      "text" : "The secret.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "secret"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5UInt8V",
+      "text" : "UInt8"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/secret",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "secret",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/secret"
 }
 }
 }

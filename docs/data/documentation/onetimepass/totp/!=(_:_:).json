@@ -197,7 +197,10 @@
 "references": {
 "doc://OneTimePass/documentation/OneTimePass": {
   "abstract" : [
-
+    {
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
   "kind" : "symbol",

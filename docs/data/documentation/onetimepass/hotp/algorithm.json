@@ -100,6 +100,19 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/secret",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/counter",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/digits",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/issuer",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/account"
+      ],
+      "title" : "Properties"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -116,7 +129,10 @@
 "references": {
 "doc://OneTimePass/documentation/OneTimePass": {
   "abstract" : [
-
+    {
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
   "kind" : "symbol",
@@ -159,6 +175,47 @@
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/hotp"
 },
+"doc://OneTimePass/documentation/OneTimePass/HOTP/account": {
+  "abstract" : [
+    {
+      "text" : "The account name.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "account"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/account",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "account",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hotp\/account"
+},
 "doc://OneTimePass/documentation/OneTimePass/HOTP/algorithm": {
   "abstract" : [
     {
@@ -195,6 +252,162 @@
   "title" : "algorithm",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/hotp\/algorithm"
+},
+"doc://OneTimePass/documentation/OneTimePass/HOTP/counter": {
+  "abstract" : [
+    {
+      "text" : "The counter counting the number of iterations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "counter"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/counter",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "counter",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hotp\/counter"
+},
+"doc://OneTimePass/documentation/OneTimePass/HOTP/digits": {
+  "abstract" : [
+    {
+      "text" : "The number of digits in a one-time password.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "digits"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/digits",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "digits",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hotp\/digits"
+},
+"doc://OneTimePass/documentation/OneTimePass/HOTP/issuer": {
+  "abstract" : [
+    {
+      "text" : "The provider of the service the account is associated with.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "issuer"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/issuer",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "issuer",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hotp\/issuer"
+},
+"doc://OneTimePass/documentation/OneTimePass/HOTP/secret": {
+  "abstract" : [
+    {
+      "text" : "The secret.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "secret"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5UInt8V",
+      "text" : "UInt8"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/secret",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "secret",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/hotp\/secret"
 },
 "doc://OneTimePass/documentation/OneTimePass/HashAlgorithm": {
   "abstract" : [

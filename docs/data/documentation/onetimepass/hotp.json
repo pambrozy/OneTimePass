@@ -99,33 +99,47 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
+      ],
+      "title" : "Algorithms"
+    }
+  ],
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(from:)",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(secret:counter:algorithm:digits:issuer:account:)",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(urlString:)"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(urlString:)",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(from:)"
       ],
       "title" : "Initializers"
     },
     {
       "identifiers" : [
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/account",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/algorithm",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/secret",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/counter",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/algorithm",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/digits",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/issuer",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/secret",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/urlString"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/account"
       ],
-      "title" : "Instance Properties"
+      "title" : "Properties"
     },
     {
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/generateCode()",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/generateCode(counter:)"
       ],
-      "title" : "Instance Methods"
+      "title" : "Code Generation"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/urlString"
+      ],
+      "title" : "URL Representation"
     },
     {
       "generated" : true,
@@ -171,7 +185,10 @@
 },
 "doc://OneTimePass/documentation/OneTimePass": {
   "abstract" : [
-
+    {
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
   "kind" : "symbol",
@@ -826,6 +843,40 @@
   "title" : "urlString",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/hotp\/urlstring"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP": {
+  "abstract" : [
+    {
+      "text" : "The Time-based one-time password algorithm.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TOTP"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TOTP"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp"
 }
 }
 }

@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "",
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
       "type" : "text"
     }
   ],
@@ -29,6 +29,56 @@
     "symbolKind" : "module",
     "title" : "OneTimePass"
   },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To generate a TOTP one-time password code:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Create a TOTP instance",
+            "let totp = try TOTP(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\")",
+            "",
+            "\/\/ Generate a code ",
+            "let code = try totp.generateCode()",
+            "",
+            "\/\/ Print the code",
+            "print(code.code)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "See how to present the codes to the user using SwiftUI: ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI",
+              "isActive" : true,
+              "type" : "reference"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 2,
@@ -43,14 +93,19 @@
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
       ],
-      "title" : "Structures"
+      "title" : "Algorithms"
     },
     {
       "identifiers" : [
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm"
+      ],
+      "title" : "Hash"
+    },
+    {
+      "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError"
       ],
-      "title" : "Enumerations"
+      "title" : "Errors"
     }
   ],
   "variants" : [
@@ -69,7 +124,10 @@
 "references": {
 "doc://OneTimePass/documentation/OneTimePass": {
   "abstract" : [
-
+    {
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
   "kind" : "symbol",
@@ -213,6 +271,21 @@
   "title" : "TOTP",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp"
+},
+"doc://OneTimePass/tutorials/OneTimePass/Use-with-SwiftUI": {
+  "abstract" : [
+    {
+      "text" : "Use the package to show the current code to the user.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "20min",
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Use with SwiftUI",
+  "type" : "topic",
+  "url" : "\/tutorials\/onetimepass\/use-with-swiftui"
 }
 }
 }
