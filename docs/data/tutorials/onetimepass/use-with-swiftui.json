@@ -1,0 +1,1373 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI#Create-a-view"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI#Add-views"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI#Generate-and-update-the-code"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents\/Usage"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents",
+        "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents\/$volume",
+        "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents\/Usage"
+      ]
+    ],
+    "reference" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "Usage",
+    "categoryPathComponent" : "Table-of-Contents",
+    "role" : "project",
+    "title" : "Use with SwiftUI"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "Usage",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use the package to show the current code to the user.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 20,
+      "kind" : "hero",
+      "title" : "Use with SwiftUI"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Create-a-view",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a new view and add an initialzer.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-1-1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a new SwiftUI View to the project and call it ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TOTPView",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "use-with-swiftui-1-1.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-1-2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Import the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "OneTimePass",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " package.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "totp",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property will contain the code generator.",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : " ",
+                      "type" : "text"
+                    },
+                    {
+                      "text" : "The ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "code",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property will contain the current code to present.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "use-with-swiftui-1-3.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "totp",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "code",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " properties.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-1-4.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create an initializer.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If the URL is not valid, an empty view will be presented.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "code" : "use-with-swiftui-1-5.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Update the preview code with the example URL string.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Create a view"
+        },
+        {
+          "anchor" : "Add-views",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add text views for presenting the code and the time in which a new code will be generated.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-2-1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Replace the contents on the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "body",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " with a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "VStack",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " containing a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Text",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "use-with-swiftui-2-1.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-2-2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Show a text when we can’t generate the code.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "use-with-swiftui-2-2.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-2-3.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Text",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " presenting the current code.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "use-with-swiftui-2-3.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-2-4.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Text",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " presenting the time when a new code will be generated.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "use-with-swiftui-2-4.png",
+              "type" : "step"
+            }
+          ],
+          "title" : "Add views"
+        },
+        {
+          "anchor" : "Generate-and-update-the-code",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Generate the current code and automatically update the code.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-3-1.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add an ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "task",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "VStack",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to generate the current code when the view appears.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-3-2.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Generate the current code and assign it to the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "code",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " property.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "use-with-swiftui-3-3.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Await the next codes in a loop using the ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "codes",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " async sequence in the TOTP generator.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "use-with-swiftui-2-4.png",
+              "type" : "step"
+            }
+          ],
+          "title" : "Generate and update the code"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://OneTimePass/tutorials/OneTimePass/Use-with-SwiftUI": {
+  "abstract" : [
+    {
+      "text" : "Use the package to show the current code to the user.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "20min",
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Use with SwiftUI",
+  "type" : "topic",
+  "url" : "\/tutorials\/onetimepass\/use-with-swiftui"
+},
+"doc://OneTimePass/tutorials/OneTimePass/Use-with-SwiftUI#Add-views": {
+  "abstract" : [
+    {
+      "text" : "Use the package to show the current code to the user.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI#Add-views",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add views",
+  "type" : "section",
+  "url" : "\/tutorials\/onetimepass\/use-with-swiftui#Add-views"
+},
+"doc://OneTimePass/tutorials/OneTimePass/Use-with-SwiftUI#Create-a-view": {
+  "abstract" : [
+    {
+      "text" : "Use the package to show the current code to the user.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI#Create-a-view",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Create a view",
+  "type" : "section",
+  "url" : "\/tutorials\/onetimepass\/use-with-swiftui#Create-a-view"
+},
+"doc://OneTimePass/tutorials/OneTimePass/Use-with-SwiftUI#Generate-and-update-the-code": {
+  "abstract" : [
+    {
+      "text" : "Use the package to show the current code to the user.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI#Generate-and-update-the-code",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Generate and update the code",
+  "type" : "section",
+  "url" : "\/tutorials\/onetimepass\/use-with-swiftui#Generate-and-update-the-code"
+},
+"doc://OneTimePass/tutorials/Table-of-Contents": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use the package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Usage",
+  "type" : "topic",
+  "url" : "\/tutorials\/table-of-contents"
+},
+"doc://OneTimePass/tutorials/Table-of-Contents/Usage": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents\/Usage",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Usage",
+  "type" : "topic",
+  "url" : "\/tutorials\/table-of-contents\/usage"
+},
+"use-with-swiftui-1-1.png": {
+  "alt" : "A screen with a \\\"Hello, World!\\\" label.",
+  "identifier" : "use-with-swiftui-1-1.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/use-with-swiftui-1-1.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/use-with-swiftui-1-1~dark.png"
+    }
+  ]
+},
+"use-with-swiftui-1-1.swift": {
+  "content" : [
+    "import SwiftUI",
+    "",
+    "struct TOTPView: View {",
+    "    var body: some View {",
+    "        Text(\"Hello, World!\")",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        TOTPView()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "use-with-swiftui-1-1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-1-2.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    var body: some View {",
+    "        Text(\"Hello, World!\")",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        TOTPView()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 2
+    }
+  ],
+  "identifier" : "use-with-swiftui-1-2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-1-3.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "    ",
+    "    var body: some View {",
+    "        Text(\"Hello, World!\")",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        TOTPView()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 5
+    },
+    {
+      "line" : 6
+    },
+    {
+      "line" : 7
+    },
+    {
+      "line" : 8
+    },
+    {
+      "line" : 9
+    }
+  ],
+  "identifier" : "use-with-swiftui-1-3.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-1-4.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        Text(\"Hello, World!\")",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        TOTPView()",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 9
+    },
+    {
+      "line" : 10
+    },
+    {
+      "line" : 11
+    },
+    {
+      "line" : 12
+    },
+    {
+      "line" : 13
+    }
+  ],
+  "identifier" : "use-with-swiftui-1-4.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-1-5.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        Text(\"Hello, World!\")",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    }
+  ],
+  "identifier" : "use-with-swiftui-1-5.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-2-1.png": {
+  "alt" : "A screen with a \\\"Current code:\\\" label.",
+  "identifier" : "use-with-swiftui-2-1.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-1.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-1~dark.png"
+    }
+  ]
+},
+"use-with-swiftui-2-1.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 15
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    }
+  ],
+  "identifier" : "use-with-swiftui-2-1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-2-2.png": {
+  "alt" : "A screen with \\\"Current code:\\\" and \\\"Could not generate code\\\" labels.",
+  "identifier" : "use-with-swiftui-2-2.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-2.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-2~dark.png"
+    }
+  ]
+},
+"use-with-swiftui-2-2.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "            if let code = code {",
+    "                \/\/ TODO",
+    "            } else {",
+    "                Text(\"Could not generate code\")",
+    "            }",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    }
+  ],
+  "identifier" : "use-with-swiftui-2-2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-2-3.png": {
+  "alt" : "A screen with \\\"Current code:\\\" and generated 6-digit code labels.",
+  "identifier" : "use-with-swiftui-2-3.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-3.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-3~dark.png"
+    }
+  ]
+},
+"use-with-swiftui-2-3.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "            if let code = code {",
+    "                Text(code.code)",
+    "                    .font(.system(.largeTitle, design: .rounded))",
+    "                    .fontWeight(.semibold)",
+    "            } else {",
+    "                Text(\"Could not generate code\")",
+    "            }",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    }
+  ],
+  "identifier" : "use-with-swiftui-2-3.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-2-4.png": {
+  "alt" : "A screen with three labels: \\\"Current code:\\\", the generated 6-digit code and a time for which the code is valid.",
+  "identifier" : "use-with-swiftui-2-4.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-4.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/use-with-swiftui-2-4~dark.png"
+    }
+  ]
+},
+"use-with-swiftui-2-4.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "            if let code = code {",
+    "                Text(code.code)",
+    "                    .font(.system(.largeTitle, design: .rounded))",
+    "                    .fontWeight(.semibold)",
+    "                Text(",
+    "                    code.validTo.addingTimeInterval(1.0),",
+    "                    style: .relative",
+    "                )",
+    "            } else {",
+    "                Text(\"Could not generate code\")",
+    "            }",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    },
+    {
+      "line" : 25
+    },
+    {
+      "line" : 26
+    }
+  ],
+  "identifier" : "use-with-swiftui-2-4.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-3-1.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "            if let code = code {",
+    "                Text(code.code)",
+    "                    .font(.system(.largeTitle, design: .rounded))",
+    "                    .fontWeight(.semibold)",
+    "                Text(",
+    "                    code.validTo.addingTimeInterval(1.0),",
+    "                    style: .relative",
+    "                )",
+    "            } else {",
+    "                Text(\"Could not generate code\")",
+    "            }",
+    "        }",
+    "        .task {",
+    "            \/\/ TODO",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 31
+    },
+    {
+      "line" : 32
+    },
+    {
+      "line" : 33
+    }
+  ],
+  "identifier" : "use-with-swiftui-3-1.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-3-2.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "            if let code = code {",
+    "                Text(code.code)",
+    "                    .font(.system(.largeTitle, design: .rounded))",
+    "                    .fontWeight(.semibold)",
+    "                Text(",
+    "                    code.validTo.addingTimeInterval(1.0),",
+    "                    style: .relative",
+    "                )",
+    "            } else {",
+    "                Text(\"Could not generate code\")",
+    "            }",
+    "        }",
+    "        .task {",
+    "            code = try? totp.generateCode()",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 32
+    }
+  ],
+  "identifier" : "use-with-swiftui-3-2.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"use-with-swiftui-3-3.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import OneTimePass",
+    "",
+    "struct TOTPView: View {",
+    "    private let totp: TOTP",
+    "",
+    "    @State",
+    "    private var code: TOTP.Code?",
+    "",
+    "    init(urlString: String) throws {",
+    "        self.totp = try TOTP(urlString: urlString)",
+    "    }",
+    "",
+    "    var body: some View {",
+    "        VStack {",
+    "            Text(\"Current code:\")",
+    "                .font(.headline)",
+    "                .padding(8.0)",
+    "            if let code = code {",
+    "                Text(code.code)",
+    "                    .font(.system(.largeTitle, design: .rounded))",
+    "                    .fontWeight(.semibold)",
+    "                Text(",
+    "                    code.validTo.addingTimeInterval(1.0),",
+    "                    style: .relative",
+    "                )",
+    "            } else {",
+    "                Text(\"Could not generate code\")",
+    "            }",
+    "        }",
+    "        .task {",
+    "            code = try? totp.generateCode()",
+    "",
+    "            do {",
+    "                for try await code in totp.codes {",
+    "                    self.code = code",
+    "                }",
+    "            } catch {",
+    "                code = nil",
+    "            }",
+    "        }",
+    "    }",
+    "}",
+    "",
+    "struct TOTPView_Previews: PreviewProvider {",
+    "    static var previews: some View {",
+    "        if let totpView = try? TOTPView(urlString: \"otpauth:\/\/totp\/?secret=JBSWY3DPEHPK3PXP\") {",
+    "            totpView",
+    "        } else {",
+    "            EmptyView()",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "TOTPView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 33
+    },
+    {
+      "line" : 34
+    },
+    {
+      "line" : 35
+    },
+    {
+      "line" : 36
+    },
+    {
+      "line" : 37
+    },
+    {
+      "line" : 38
+    },
+    {
+      "line" : 39
+    },
+    {
+      "line" : 40
+    }
+  ],
+  "identifier" : "use-with-swiftui-3-3.swift",
+  "syntax" : "swift",
+  "type" : "file"
+}
+}
+}

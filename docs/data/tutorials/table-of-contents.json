@@ -1,0 +1,135 @@
+{
+  "hierarchy" : {
+    "paths" : [
+
+    ],
+    "reference" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents"
+  },
+  "kind" : "overview",
+  "metadata" : {
+    "category" : "Usage",
+    "categoryPathComponent" : "Table-of-Contents",
+    "estimatedTime" : "20min",
+    "role" : "overview",
+    "title" : "Usage"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "action" : {
+        "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Learn how to use the package.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "hero",
+      "title" : "Usage"
+    },
+    {
+      "chapters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Use the package to show the current code to the user.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "image" : "usage.png",
+          "name" : "Usage",
+          "tutorials" : [
+            "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI"
+          ]
+        }
+      ],
+      "content" : [
+
+      ],
+      "image" : null,
+      "kind" : "volume",
+      "name" : null
+    }
+  ]
+, 
+"references": {
+"doc://OneTimePass/tutorials/OneTimePass/Use-with-SwiftUI": {
+  "abstract" : [
+    {
+      "text" : "Use the package to show the current code to the user.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "20min",
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/OneTimePass\/Use-with-SwiftUI",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Use with SwiftUI",
+  "type" : "topic",
+  "url" : "\/tutorials\/onetimepass\/use-with-swiftui"
+},
+"doc://OneTimePass/tutorials/Table-of-Contents": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use the package.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/tutorials\/Table-of-Contents",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Usage",
+  "type" : "topic",
+  "url" : "\/tutorials\/table-of-contents"
+},
+"usage.png": {
+  "alt" : "A view with three labels: \\\"Current code:\\\", the generated 6-digit code and a time for which the code is valid.",
+  "identifier" : "usage.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/usage.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/usage~dark.png"
+    }
+  ]
+}
+}
+}
