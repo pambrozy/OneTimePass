@@ -1,0 +1,134 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Use with SwiftUI") {
+        Use the package to show the current code to the user.        
+    }
+    
+    @Section(title: "Create a view") {
+        @ContentAndMedia {
+            Create a new view and add an initialzer.
+        }
+        
+        @Steps {
+            @Step {
+                Add a new SwiftUI View to the project and call it `TOTPView`.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-1-1.swift) {
+                    @Image(source: use-with-swiftui-1-1.png, alt: "A screen with a \"Hello, World!\" label.")
+                }
+            }
+            
+            @Step {
+                Import the `OneTimePass` package.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-1-2.swift)
+            }
+            
+            @Step {
+                Add the `totp` and `code` properties.
+                
+                The `totp` property will contain the code generator.
+                The `code` property will contain the current code to present.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-1-3.swift)
+            }
+            
+            @Step {
+                Create an initializer.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-1-4.swift)
+            }
+            
+            @Step {
+                Update the preview code with the example URL string.
+                
+                If the URL is not valid, an empty view will be presented.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-1-5.swift)
+            }
+        }
+    }
+    
+    @Section(title: "Add views") {
+        @ContentAndMedia {
+            Add text views for presenting the code and the time in which a new code will be generated.
+        }
+        
+        @Steps {
+            @Step {
+                Replace the contents on the `body` with a `VStack` containing a `Text`.
+                
+                @Code(
+                      name: "TOTPView.swift", 
+                      file: use-with-swiftui-2-1.swift, 
+                      previousFile: use-with-swiftui-1-5.swift
+                ) {
+                    @Image(source: use-with-swiftui-2-1.png, alt: "A screen with a \"Current code:\" label.")
+                }
+            }
+            
+            @Step {
+                Show a text when we can't generate the code.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-2-2.swift) {
+                    @Image(
+                           source: use-with-swiftui-2-2.png, 
+                           alt: "A screen with \"Current code:\" and \"Could not generate code\" labels."
+                    )
+                }
+            }
+            
+            @Step {
+                Add a `Text` presenting the current code.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-2-3.swift) {
+                    @Image(
+                           source: use-with-swiftui-2-3.png, 
+                           alt: "A screen with \"Current code:\" and generated 6-digit code labels."
+                    )
+                }
+            }
+            
+            @Step {
+                Add a `Text` presenting the time when a new code will be generated.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-2-4.swift) {
+                    @Image(
+                           source: use-with-swiftui-2-4.png, 
+                           alt: "A screen with three labels: \"Current code:\", the generated 6-digit code and a time for which the code is valid."
+                    )
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Generate and update the code") {
+        @ContentAndMedia {
+            Generate the current code and automatically update the code.             
+        }
+        
+        @Steps {
+            @Step {
+                Add an `task` to the `VStack` to generate the current code when the view appears.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-3-1.swift, previousFile: use-with-swiftui-2-4.swift)
+            }
+            
+            @Step {
+                Generate the current code and assign it to the `code` property.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-3-2.swift)
+            }
+            
+            @Step {
+                Await the next codes in a loop using the `codes` async sequence in the TOTP generator.
+                
+                @Code(name: "TOTPView.swift", file: use-with-swiftui-3-3.swift) {
+                    @Image(
+                           source: use-with-swiftui-2-4.png, 
+                           alt: "A screen with three labels: \"Current code:\", the generated 6-digit code and a time for which the code is valid."
+                    )
+                }
+            }
+        }
+    }
+}
