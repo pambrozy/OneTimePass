@@ -40,7 +40,7 @@ let task = Task {
 ```
 
 For details on how to use the package with SwiftUI, check the tutorial:
-[Use with SwiftUI](https://pambrozy.github.io/OneTimePass/documentation/onetimepass/)
+[Use with SwiftUI](https://pambrozy.github.io/OneTimePass/tutorials/onetimepass/use-with-swiftui)
 
 
 ## License
