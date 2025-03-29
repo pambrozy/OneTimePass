@@ -7,7 +7,7 @@
 //
 
 /// An error that may occur when using the HOTP or TOTP generators.
-public enum OTPError: Error {
+public enum OTPError: Error, Hashable, Sendable {
     /// Could not create a one-time password code.
     case creatingOTP
     /// The provided number of digits is incorrect.

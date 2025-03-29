@@ -20,6 +20,7 @@
 - ``Code``
 - ``generateCode()``
 - ``generateCode(date:)``
+- ``Codes``
 - ``codes``
 
 ### Code Validation

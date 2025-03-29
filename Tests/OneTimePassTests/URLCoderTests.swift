@@ -13,7 +13,7 @@ import XCTest
 final class URLCoderTests: XCTestCase {
     func testDecode() throws {
         XCTAssertThrowsError(try URLCoder("[/]")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.creatingURLComponents)
+            XCTAssertEqual(error as? OTPError, OTPError.invalidScheme)
         }
         XCTAssertThrowsError(try URLCoder("http://")) { error in
             XCTAssertEqual(error as? OTPError, OTPError.invalidScheme)

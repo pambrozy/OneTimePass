@@ -10,7 +10,7 @@ import Crypto
 import Foundation
 
 /// A cryptographic hash algorithm.
-public enum HashAlgorithm: String, Codable {
+public enum HashAlgorithm: String, Codable, Sendable {
     /// The SHA-1 (Secure Hash Algorithm 1) hash.
     case SHA1
     /// The SHA-2 (Secure Hash Algorithm 2) hash with a 256-bit digest.
@@ -21,11 +21,11 @@ public enum HashAlgorithm: String, Codable {
     func authenticationCode<D: DataProtocol>(for data: D, using key: SymmetricKey) -> [UInt8] {
         switch self {
         case .SHA1:
-            return Array(HMAC<Insecure.SHA1>.authenticationCode(for: data, using: key))
+            Array(HMAC<Insecure.SHA1>.authenticationCode(for: data, using: key))
         case .SHA256:
-            return Array(HMAC<SHA256>.authenticationCode(for: data, using: key))
+            Array(HMAC<SHA256>.authenticationCode(for: data, using: key))
         case .SHA512:
-            return Array(HMAC<SHA512>.authenticationCode(for: data, using: key))
+            Array(HMAC<SHA512>.authenticationCode(for: data, using: key))
         }
     }
 }

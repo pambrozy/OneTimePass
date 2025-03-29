@@ -121,19 +121,22 @@ final class TOTPTests: XCTestCase {
     @MainActor
     func testCodeStream() async throws {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
-        totp.currentDateProvider = { Date(timeIntervalSince1970: 1) }
+        let dateProvider = Reference(Date(timeIntervalSince1970: 1.0))
+        totp.currentDateProvider = { dateProvider.value }
         let initialCode = try totp.generateCode()
         XCTAssertEqual(initialCode.code, "84755224")
-        XCTAssertEqual(initialCode.validFrom, Date(timeIntervalSince1970: 0))
-        XCTAssertEqual(initialCode.validTo, Date(timeIntervalSince1970: 5))
+        XCTAssertEqual(initialCode.validFrom, Date(timeIntervalSince1970: 0.0))
+        XCTAssertEqual(initialCode.validTo, Date(timeIntervalSince1970: 5.0))
 
-        var asyncIterator = totp.codes.makeAsyncIterator()
+        let asyncIterator = totp.codes.makeAsyncIterator()
 
+        dateProvider.value = Date(timeIntervalSince1970: 5.0)
         var code = try await asyncIterator.next()
         XCTAssertEqual(code?.code, "94287082")
         XCTAssertEqual(code?.validFrom, Date(timeIntervalSince1970: 5.0))
         XCTAssertEqual(code?.validTo, Date(timeIntervalSince1970: 10.0))
 
+        dateProvider.value = Date(timeIntervalSince1970: 10.1)
         code = try await asyncIterator.next()
         XCTAssertEqual(code?.code, "37359152")
         XCTAssertEqual(code?.validFrom, Date(timeIntervalSince1970: 10.0))
