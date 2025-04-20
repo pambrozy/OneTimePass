@@ -1,7 +1,7 @@
 # OneTimePass
 
-![macOS Build](https://github.com/pambrozy/OneTimePass/actions/workflows/macos.yaml)
-![Linux Build](https://github.com/pambrozy/OneTimePass/actions/workflows/linux.yaml)
+[![macOS Build](https://github.com/pambrozy/OneTimePass/actions/workflows/macos.yaml/badge.svg)](https://github.com/pambrozy/OneTimePass/actions/workflows/macos.yaml)
+[![Linux Build](https://github.com/pambrozy/OneTimePass/actions/workflows/linux.yaml/badge.svg)](https://github.com/pambrozy/OneTimePass/actions/workflows/linux.yaml)
 
 A package for generating HMAC-based and Time-based one-time passwords.
 
