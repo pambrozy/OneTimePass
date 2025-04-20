@@ -1,4 +1,4 @@
-name: CI
+name: Linux Build
 
 on: push
 
@@ -14,10 +14,9 @@ jobs:
         run: swiftlint lint --reporter github-actions-logging --strict
   build:
     name: Build & Test
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: SwiftyLab/setup-swift@latest
       - name: Build
         run: swift build -v
       - name: Test
