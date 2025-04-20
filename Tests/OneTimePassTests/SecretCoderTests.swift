@@ -7,22 +7,23 @@
 //
 
 import OneTimePass
-import XCTest
+import Testing
 
-final class SecretCoderTests: XCTestCase {
-    func testDecoder() throws {
+struct SecretCoderTests {
+    @Test
+    func decoder() throws {
         _ = try HOTP(urlString: "otpauth://hotp/?secret=&counter=0")
 
-        XCTAssertThrowsError(try HOTP(urlString: "otpauth://hotp/?secret=IF%C2%B7A&counter=0")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.decodingSecret)
+        #expect(throws: OTPError.decodingSecret) {
+            try HOTP(urlString: "otpauth://hotp/?secret=IF%C2%B7A&counter=0")
         }
-
-        XCTAssertThrowsError(try HOTP(urlString: "otpauth://hotp/?secret=IF9A&counter=0")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.decodingSecret)
+        #expect(throws: OTPError.decodingSecret) {
+            try HOTP(urlString: "otpauth://hotp/?secret=IF9A&counter=0")
         }
     }
 
-    func testEncoder() throws {
+    @Test
+    func encoder() throws {
         _ = try HOTP(urlString: "otpauth://hotp/?secret=&counter=0").urlString
         _ = try HOTP(urlString: "otpauth://hotp/?secret=IFBEGRCF&counter=0").urlString
     }

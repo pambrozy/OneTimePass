@@ -6,10 +6,12 @@
 //  Copyright © 2022 Przemysław Ambroży
 //
 
+import Foundation
 import OneTimePass
-import XCTest
+import Testing
 
-final class TOTPTests: XCTestCase {
+@Suite
+struct TOTPTests {
     struct TestCode {
         let timestamp: Double
         let code: String
@@ -43,47 +45,50 @@ final class TOTPTests: XCTestCase {
     private static let validURL =
     "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
 
-    func testInitWithData() throws {
-        XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 0)) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+    @Test
+    func initWithData() throws {
+        #expect(throws: OTPError.wrongNumberOfDigits) {
+            try TOTP(secret: Self.secretSHA1, digits: 0)
         }
-        XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 11)) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+        #expect(throws: OTPError.wrongNumberOfDigits) {
+            try TOTP(secret: Self.secretSHA1, digits: 11)
         }
-        XCTAssertThrowsError(try TOTP(secret: Self.secretSHA1, digits: 6, period: 0)) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.zeroPeriod)
+        #expect(throws: OTPError.zeroPeriod) {
+            try TOTP(secret: Self.secretSHA1, digits: 6, period: 0)
         }
         _ = try TOTP(secret: Self.secretSHA1, digits: 6)
         _ = try TOTP(secret: Self.secretSHA1, digits: 6, period: 10)
     }
 
-    func testInitWithURL() throws {
-        XCTAssertThrowsError(try TOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.invalidType)
+    @Test
+    func initWithURL() throws {
+        #expect(throws: OTPError.invalidType) {
+            try TOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP")
         }
-        XCTAssertThrowsError(try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&digits=0")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+        #expect(throws: OTPError.wrongNumberOfDigits) {
+            try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&digits=0")
         }
         _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&digits=8")
         _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP")
 
-        XCTAssertThrowsError(try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=0")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.zeroPeriod)
+        #expect(throws: OTPError.zeroPeriod) {
+            try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=0")
         }
         _ = try TOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&period=10")
 
         let urlString =
             "otpauth://totp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
         let totp = try TOTP(urlString: urlString)
-        XCTAssertEqual(totp.secret, [0x41])
-        XCTAssertEqual(totp.algorithm, HashAlgorithm.SHA512)
-        XCTAssertEqual(totp.digits, 10)
-        XCTAssertEqual(totp.period, 60)
-        XCTAssertEqual(totp.issuer, "Example")
-        XCTAssertEqual(totp.account, "user@example.com")
+        #expect(totp.secret == [0x41])
+        #expect(totp.algorithm == HashAlgorithm.SHA512)
+        #expect(totp.digits == 10)
+        #expect(totp.period == 60)
+        #expect(totp.issuer == "Example")
+        #expect(totp.account == "user@example.com")
     }
 
-    func testURLString() throws {
+    @Test
+    func urlString() throws {
         let totp = try TOTP(
             secret: [0x41],
             algorithm: .SHA512,
@@ -95,61 +100,62 @@ final class TOTPTests: XCTestCase {
 
         let expectedString = "otpauth://totp/iss:user?secret=IE&algorithm=SHA512&digits=7&period=60&issuer=iss"
 
-        XCTAssertEqual(totp.urlString, expectedString)
+        #expect(totp.urlString == expectedString)
     }
 
-    func testCodes() throws {
-        for testCode in Self.expectedCodes {
-            let totp = try TOTP(secret: testCode.secret, algorithm: testCode.mode, digits: 8)
-            let code = try totp.generateCode(date: Date(timeIntervalSince1970: testCode.timestamp))
-            XCTAssertEqual(code.code, testCode.code)
-            XCTAssertEqual(code.validFrom, Date(timeIntervalSince1970: testCode.validFrom))
-            XCTAssertEqual(code.validTo, Date(timeIntervalSince1970: testCode.validTo))
-        }
+    @Test(arguments: Self.expectedCodes)
+    func codes(testCode: TestCode) throws {
+        let totp = try TOTP(secret: testCode.secret, algorithm: testCode.mode, digits: 8)
+        let code = try totp.generateCode(date: Date(timeIntervalSince1970: testCode.timestamp))
+        #expect(code.code == testCode.code)
+        #expect(code.validFrom == Date(timeIntervalSince1970: testCode.validFrom))
+        #expect(code.validTo == Date(timeIntervalSince1970: testCode.validTo))
     }
 
-    func testCodeNow() throws {
+    @Test
+    func codeNow() throws {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
         totp.currentDateProvider = { Date(timeIntervalSince1970: 59) }
 
         let code = try totp.generateCode()
-        XCTAssertEqual(try totp.generateCode().code, "94287082")
-        XCTAssertEqual(code.validFrom, Date(timeIntervalSince1970: 30))
-        XCTAssertEqual(code.validTo, Date(timeIntervalSince1970: 60))
+        #expect(try totp.generateCode().code == "94287082")
+        #expect(code.validFrom == Date(timeIntervalSince1970: 30))
+        #expect(code.validTo == Date(timeIntervalSince1970: 60))
     }
 
-    @MainActor
-    func testCodeStream() async throws {
+    @Test
+    func codeStream() async throws {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 5)
         let dateProvider = Reference(Date(timeIntervalSince1970: 1.0))
         totp.currentDateProvider = { dateProvider.value }
         let initialCode = try totp.generateCode()
-        XCTAssertEqual(initialCode.code, "84755224")
-        XCTAssertEqual(initialCode.validFrom, Date(timeIntervalSince1970: 0.0))
-        XCTAssertEqual(initialCode.validTo, Date(timeIntervalSince1970: 5.0))
+        #expect(initialCode.code == "84755224")
+        #expect(initialCode.validFrom == Date(timeIntervalSince1970: 0.0))
+        #expect(initialCode.validTo == Date(timeIntervalSince1970: 5.0))
 
         let asyncIterator = totp.codes.makeAsyncIterator()
 
         dateProvider.value = Date(timeIntervalSince1970: 5.0)
         var code = try await asyncIterator.next()
-        XCTAssertEqual(code?.code, "94287082")
-        XCTAssertEqual(code?.validFrom, Date(timeIntervalSince1970: 5.0))
-        XCTAssertEqual(code?.validTo, Date(timeIntervalSince1970: 10.0))
+        #expect(code?.code == "94287082")
+        #expect(code?.validFrom == Date(timeIntervalSince1970: 5.0))
+        #expect(code?.validTo == Date(timeIntervalSince1970: 10.0))
 
         dateProvider.value = Date(timeIntervalSince1970: 10.1)
         code = try await asyncIterator.next()
-        XCTAssertEqual(code?.code, "37359152")
-        XCTAssertEqual(code?.validFrom, Date(timeIntervalSince1970: 10.0))
-        XCTAssertEqual(code?.validTo, Date(timeIntervalSince1970: 15.0))
+        #expect(code?.code == "37359152")
+        #expect(code?.validFrom == Date(timeIntervalSince1970: 10.0))
+        #expect(code?.validTo == Date(timeIntervalSince1970: 15.0))
     }
 
-    func testValidate() throws {
+    @Test
+    func validate() throws {
         var totp = try TOTP(secret: Self.secretSHA1, algorithm: .SHA1, digits: 8, period: 30)
         totp.currentDateProvider = { Date(timeIntervalSince1970: 1 + (3 * 30)) }
 
-        XCTAssertEqual(try totp.validate("123456", acceptPreviousCodes: 0, acceptNextCodes: 0), false)
-        XCTAssertEqual(try totp.validate("123456aa", acceptPreviousCodes: 0, acceptNextCodes: 0), false)
-        XCTAssertEqual(try totp.validate("26969429", acceptPreviousCodes: 0, acceptNextCodes: 0), true)
+        #expect(try totp.validate("123456", acceptPreviousCodes: 0, acceptNextCodes: 0) == false)
+        #expect(try totp.validate("123456aa", acceptPreviousCodes: 0, acceptNextCodes: 0) == false)
+        #expect(try totp.validate("26969429", acceptPreviousCodes: 0, acceptNextCodes: 0) == true)
 
         // 1 + (0 * 30): 84755224 INVALID
         // 1 + (1 * 30): 94287082 VALID    \
@@ -158,15 +164,16 @@ final class TOTPTests: XCTestCase {
         // 1 + (4 * 30): 40338314 VALID    /   1 next
         // 1 + (5 * 30): 68254676 INVALID
 
-        XCTAssertEqual(try totp.validate("84755224", acceptPreviousCodes: 2, acceptNextCodes: 1), false)
-        XCTAssertEqual(try totp.validate("94287082", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
-        XCTAssertEqual(try totp.validate("37359152", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
-        XCTAssertEqual(try totp.validate("26969429", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
-        XCTAssertEqual(try totp.validate("40338314", acceptPreviousCodes: 2, acceptNextCodes: 1), true)
-        XCTAssertEqual(try totp.validate("68254676", acceptPreviousCodes: 2, acceptNextCodes: 1), false)
+        #expect(try totp.validate("84755224", acceptPreviousCodes: 2, acceptNextCodes: 1) == false)
+        #expect(try totp.validate("94287082", acceptPreviousCodes: 2, acceptNextCodes: 1) == true)
+        #expect(try totp.validate("37359152", acceptPreviousCodes: 2, acceptNextCodes: 1) == true)
+        #expect(try totp.validate("26969429", acceptPreviousCodes: 2, acceptNextCodes: 1) == true)
+        #expect(try totp.validate("40338314", acceptPreviousCodes: 2, acceptNextCodes: 1) == true)
+        #expect(try totp.validate("68254676", acceptPreviousCodes: 2, acceptNextCodes: 1) == false)
     }
 
-    func testHashable() throws {
+    @Test
+    func hashable() throws {
         let totp1 = try TOTP(
             urlString: "otpauth://totp/iss:user?issuer=Example&secret=IE&algorithm=SHA512&digits=10&period=60"
         )
@@ -178,7 +185,7 @@ final class TOTPTests: XCTestCase {
             issuer: "iss",
             account: "user"
         )
-        XCTAssertEqual(totp1, totp2)
+        #expect(totp1 == totp2)
         _ = totp1.hashValue
     }
 }

@@ -7,9 +7,10 @@
 //
 
 import OneTimePass
-import XCTest
+import Testing
 
-final class HOTPTests: XCTestCase {
+@Suite
+struct HOTPTests {
     private static let secret: [UInt8] = [
         0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38,
         0x39, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36,
@@ -29,28 +30,28 @@ final class HOTPTests: XCTestCase {
         (9, "0645520489")
     ]
 
-    func testInitWithData() throws {
-        XCTAssertThrowsError(try HOTP(secret: Self.secret, counter: 0, digits: 0)) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+    @Test
+    func initWithData() throws {
+        #expect(throws: OTPError.wrongNumberOfDigits) {
+            try HOTP(secret: Self.secret, counter: 0, digits: 0)
         }
-        XCTAssertThrowsError(try HOTP(secret: Self.secret, counter: 0, digits: 11)) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
+        #expect(throws: OTPError.wrongNumberOfDigits) {
+            try HOTP(secret: Self.secret, counter: 0, digits: 11)
         }
         _ = try HOTP(secret: Self.secret, counter: 0, digits: 1)
         _ = try HOTP(secret: Self.secret, counter: 0, digits: 10)
     }
 
-    func testInitWithURL() throws {
-        XCTAssertThrowsError(try HOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&counter=0")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.invalidType)
+    @Test
+    func initWithURL() throws {
+        #expect(throws: OTPError.invalidType) {
+            try HOTP(urlString: "otpauth://totp/?secret=JBSWY3DPEHPK3PXP&counter=0")
         }
-        XCTAssertThrowsError(try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.counterMissing)
+        #expect(throws: OTPError.counterMissing) {
+            try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP")
         }
-        XCTAssertThrowsError(
+        #expect(throws: OTPError.wrongNumberOfDigits) {
             try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP&counter=0&digits=11")
-        ) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.wrongNumberOfDigits)
         }
 
         _ = try HOTP(urlString: "otpauth://hotp/?secret=JBSWY3DPEHPK3PXP&counter=0")
@@ -58,15 +59,16 @@ final class HOTPTests: XCTestCase {
         let urlString =
             "otpauth://hotp/Example:user@example.com?issuer=Example&secret=IE&algorithm=SHA512&digits=7&counter=123"
         let hotp = try HOTP(urlString: urlString)
-        XCTAssertEqual(hotp.secret, [0x41])
-        XCTAssertEqual(hotp.counter, 123)
-        XCTAssertEqual(hotp.algorithm, HashAlgorithm.SHA512)
-        XCTAssertEqual(hotp.digits, 7)
-        XCTAssertEqual(hotp.issuer, "Example")
-        XCTAssertEqual(hotp.account, "user@example.com")
+        #expect(hotp.secret == [0x41])
+        #expect(hotp.counter == 123)
+        #expect(hotp.algorithm == HashAlgorithm.SHA512)
+        #expect(hotp.digits == 7)
+        #expect(hotp.issuer == "Example")
+        #expect(hotp.account == "user@example.com")
     }
 
-    func testURLString() throws {
+    @Test
+    func urlString() throws {
         let hotp = try HOTP(
             secret: [0x41],
             counter: 123,
@@ -78,24 +80,23 @@ final class HOTPTests: XCTestCase {
 
         let expectedString = "otpauth://hotp/iss:user?secret=IE&algorithm=SHA512&digits=7&counter=123&issuer=iss"
 
-        XCTAssertEqual(hotp.urlString, expectedString)
+        #expect(hotp.urlString == expectedString)
     }
 
-    func testCodes() throws {
+    @Test(arguments: Self.expectedCodes)
+    func codes(counter: Int, expectedCode: String) throws {
         let hotp = try HOTP(secret: Self.secret, counter: 0, digits: 10)
-
-        for (counter, expectedCode) in Self.expectedCodes {
-            let code = try hotp.generateCode(counter: counter)
-            XCTAssertEqual(code, expectedCode)
-        }
+        let code = try hotp.generateCode(counter: counter)
+        #expect(code == expectedCode)
     }
 
-    func testAutoIncrement() throws {
+    @Test
+    func autoIncrement() throws {
         var hotp = try HOTP(secret: Self.secret, counter: 0, digits: 10)
 
         for (_, expectedCode) in Self.expectedCodes {
             let code = try hotp.generateCode()
-            XCTAssertEqual(code, expectedCode)
+            #expect(code == expectedCode)
         }
     }
 }
