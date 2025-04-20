@@ -6,36 +6,26 @@
 //  Copyright © 2025 Przemysław Ambroży
 //
 
-import os
+import Foundation
 
 final class Reference<T>: @unchecked Sendable {
     private var lockedValue: T
-    private var lock: UnsafeMutablePointer<os_unfair_lock>
+    private let lock = NSLock()
 
     var value: T {
         get {
-            os_unfair_lock_lock(lock)
-            defer {
-                os_unfair_lock_unlock(lock)
+            lock.withLock {
+                lockedValue
             }
-            return lockedValue
         }
         set {
-            os_unfair_lock_lock(lock)
-            defer {
-                os_unfair_lock_unlock(lock)
+            lock.withLock {
+                lockedValue = newValue
             }
-            lockedValue = newValue
         }
     }
 
     init(_ value: T) {
-        lock = UnsafeMutablePointer<os_unfair_lock>.allocate(capacity: 1)
-        lock.initialize(to: os_unfair_lock())
         self.lockedValue = value
-    }
-
-    deinit {
-        lock.deallocate()
     }
 }
