@@ -10,7 +10,7 @@ import Crypto
 import Foundation
 
 /// The HMAC-based one-time password algorithm.
-public struct HOTP: Hashable, Codable {
+public struct HOTP: Hashable, Codable, Sendable {
     /// The secret.
     public let secret: [UInt8]
 
@@ -142,8 +142,9 @@ public struct HOTP: Hashable, Codable {
     /// Generates a code for the current counter value and increments the counter.
     /// - Returns: The generated one-time password code.
     public mutating func generateCode() throws -> String {
-        let result = try generateCode(counter: counter)
-        counter += 1
-        return result
+        defer {
+            counter += 1
+        }
+        return try generateCode(counter: counter)
     }
 }

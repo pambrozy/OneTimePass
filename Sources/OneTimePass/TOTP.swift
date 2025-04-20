@@ -10,9 +10,9 @@ import Crypto
 import Foundation
 
 /// The Time-based one-time password algorithm.
-public struct TOTP {
+public struct TOTP: Sendable {
     /// The code and the dates it is valid in.
-    public struct Code {
+    public struct Code: Hashable, Sendable {
         /// The one-time password code.
         public let code: String
 
@@ -42,7 +42,7 @@ public struct TOTP {
     public let account: String?
 
     /// A block of code the generator executes to obtain the current date.
-    public var currentDateProvider: () -> Date = { Date() }
+    public var currentDateProvider: @Sendable () -> Date = { Date() }
 
     /// Creates a new TOTP generator.
     /// - Parameters:
@@ -186,29 +186,8 @@ public struct TOTP {
     /// Returns an async sequence of one-time password codes.
     ///
     /// - Note: The current code is **not** included.
-    public var codes: AsyncThrowingStream<Code, Error> {
-        AsyncThrowingStream(bufferingPolicy: .bufferingNewest(1)) { continuation in
-            let period = Double(period)
-            let fireDate = lastGenerationDate.addingTimeInterval(period)
-
-            var lastGenerationDate = fireDate.addingTimeInterval(-period)
-
-            let timer = Timer(fire: fireDate, interval: period, repeats: true) { timer in
-                let generationDate = lastGenerationDate.addingTimeInterval(period)
-                do {
-                    continuation.yield(try generateCode(date: generationDate))
-                } catch {
-                    timer.invalidate()
-                    continuation.finish(throwing: error)
-                }
-                lastGenerationDate = generationDate
-            }
-            continuation.onTermination = { _ in
-                timer.invalidate()
-            }
-
-            RunLoop.current.add(timer, forMode: .common)
-        }
+    public var codes: Codes {
+        Codes(totp: self)
     }
 
     /// Validates a given one-time password code.

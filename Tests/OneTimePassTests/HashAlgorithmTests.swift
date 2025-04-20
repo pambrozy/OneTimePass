@@ -8,13 +8,15 @@
 
 import Crypto
 @testable import OneTimePass
-import XCTest
+import Testing
 
-final class HashAlgorithmTests: XCTestCase {
+@Suite
+struct HashAlgorithmTests {
     private static let data: [UInt8] = [0x41]
     private static let key: [UInt8] = [0x41, 0x42, 0x43]
 
-    func testSHA1() {
+    @Test
+    func sha1() {
         let authenticationCode = HashAlgorithm.SHA1.authenticationCode(
             for: Self.data,
             using: SymmetricKey(data: Self.key)
@@ -28,10 +30,11 @@ final class HashAlgorithmTests: XCTestCase {
             0x94, 0x91, 0xEA, 0xA4
         ]
 
-        XCTAssertEqual(authenticationCode, expectedResult)
+        #expect(authenticationCode == expectedResult)
     }
 
-    func testSHA256() {
+    @Test
+    func sha256() {
         let authenticationCode = HashAlgorithm.SHA256.authenticationCode(
             for: Self.data,
             using: SymmetricKey(data: Self.key)
@@ -44,10 +47,11 @@ final class HashAlgorithmTests: XCTestCase {
             0xF3, 0x6D, 0xAD, 0x04, 0x73, 0xBD, 0xF0, 0x21
         ]
 
-        XCTAssertEqual(authenticationCode, expectedResult)
+        #expect(authenticationCode == expectedResult)
     }
 
-    func testSHA512() {
+    @Test
+    func sha512() {
         let authenticationCode = HashAlgorithm.SHA512.authenticationCode(
             for: Self.data,
             using: SymmetricKey(data: Self.key)
@@ -64,6 +68,6 @@ final class HashAlgorithmTests: XCTestCase {
             0x9A, 0xFB, 0x03, 0x3E, 0x75, 0xB6, 0xAB, 0x69
         ]
 
-        XCTAssertEqual(authenticationCode, expectedResult)
+        #expect(authenticationCode == expectedResult)
     }
 }

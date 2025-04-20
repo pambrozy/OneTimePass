@@ -29,7 +29,7 @@ extension URLCoder {
         guard components.scheme == "otpauth" else {
             throw OTPError.invalidScheme
         }
-        guard let type = components.host, (type == "hotp" || type == "totp") else {
+        guard let type = components.host, type == "hotp" || type == "totp" else {
             throw OTPError.invalidType
         }
         let queryItems = Self.makeQueryItems(from: components)

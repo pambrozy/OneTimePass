@@ -27,6 +27,9 @@ opt_in_rules:
 excluded:
   - Sources/OneTimePass/Documentation.docc
 
+nesting:
+  type_level: 3
+
 file_header:
   required_pattern: |
                     \/\/

@@ -1,0 +1,15 @@
+name: macOS Build
+
+on: push
+
+jobs:
+  macos:
+    name: Lint, Build & Test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: SwiftyLab/setup-swift@latest
+      - name: Build
+        run: swift build -v
+      - name: Test
+        run: swift test -v

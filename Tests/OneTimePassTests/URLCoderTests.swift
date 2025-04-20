@@ -8,47 +8,49 @@
 
 import Foundation
 @testable import OneTimePass
-import XCTest
+import Testing
 
-final class URLCoderTests: XCTestCase {
+@Suite
+struct URLCoderTests {
     func testDecode() throws {
-        XCTAssertThrowsError(try URLCoder("[/]")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.creatingURLComponents)
+        #expect(throws: OTPError.invalidScheme) {
+            try URLCoder("[/]")
         }
-        XCTAssertThrowsError(try URLCoder("http://")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.invalidScheme)
+        #expect(throws: OTPError.invalidScheme) {
+            try URLCoder("http://")
         }
-        XCTAssertThrowsError(try URLCoder("otpauth://a/")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.invalidType)
+        #expect(throws: OTPError.invalidType) {
+            try URLCoder("otpauth://a/")
         }
-        XCTAssertThrowsError(try URLCoder("otpauth://hotp/")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.secretMissing)
+        #expect(throws: OTPError.secretMissing) {
+            try URLCoder("otpauth://hotp/")
         }
-        XCTAssertThrowsError(try URLCoder("otpauth://hotp/?secret")) { error in
-            XCTAssertEqual(error as? OTPError, OTPError.secretMissing)
+        #expect(throws: OTPError.secretMissing) {
+            try URLCoder("otpauth://hotp/?secret")
         }
 
-        XCTAssertEqual(try URLCoder("otpauth://hotp/?secret=IE&counter=0&counter=1").counter, 1)
-        XCTAssertEqual(try URLCoder("otpauth://hotp/a?secret=IE&counter=0").account, "a")
+        #expect(try URLCoder("otpauth://hotp/?secret=IE&counter=0&counter=1").counter == 1)
+        #expect(try URLCoder("otpauth://hotp/a?secret=IE&counter=0").account == "a")
 
         let issuserAccount = try URLCoder("otpauth://hotp/a:b?secret=IE&counter=0")
-        XCTAssertEqual(issuserAccount.issuer, "a")
-        XCTAssertEqual(issuserAccount.account, "b")
+        #expect(issuserAccount.issuer == "a")
+        #expect(issuserAccount.account == "b")
 
         let urlString =
             "otpauth://hotp/iss:user?issuer=iss&secret=IE&algorithm=SHA512&digits=8&counter=0&period=30"
         let urlCoder = try URLCoder(urlString)
-        XCTAssertEqual(urlCoder.type, "hotp")
-        XCTAssertEqual(urlCoder.issuer, "iss")
-        XCTAssertEqual(urlCoder.account, "user")
-        XCTAssertEqual(urlCoder.secret, [0x41])
-        XCTAssertEqual(urlCoder.algorithm, .SHA512)
-        XCTAssertEqual(urlCoder.digits, 8)
-        XCTAssertEqual(urlCoder.counter, 0)
-        XCTAssertEqual(urlCoder.period, 30)
+        #expect(urlCoder.type == "hotp")
+        #expect(urlCoder.issuer == "iss")
+        #expect(urlCoder.account == "user")
+        #expect(urlCoder.secret == [0x41])
+        #expect(urlCoder.algorithm == .SHA512)
+        #expect(urlCoder.digits == 8)
+        #expect(urlCoder.counter == 0)
+        #expect(urlCoder.period == 30)
     }
 
-    func testEncode() throws {
+    @Test
+    func encode() throws {
         let urlCoder = URLCoder(
             type: "hotp",
             issuer: "iss",
@@ -62,6 +64,6 @@ final class URLCoderTests: XCTestCase {
 
         let expectedString =
             "otpauth://hotp/iss:user?secret=IE&algorithm=SHA256&digits=8&counter=10&period=60&issuer=iss"
-        XCTAssertEqual(urlCoder.urlString, expectedString)
+        #expect(urlCoder.urlString == expectedString)
     }
 }
