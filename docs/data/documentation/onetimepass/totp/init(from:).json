@@ -18,11 +18,6 @@
       [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
-      ],
-      [
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Decodable-Implementations"
       ]
     ]
   },
@@ -49,7 +44,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": any "
       },
       {
         "kind" : "typeIdentifier",
@@ -108,7 +103,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "kind" : "typeIdentifier",
@@ -131,7 +126,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -139,6 +134,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Initializers",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/init(secret:algorithm:digits:period:issuer:account:)",
@@ -209,17 +205,6 @@
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp"
 },
-"doc://OneTimePass/documentation/OneTimePass/TOTP/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/totp\/decodable-implementations"
-},
 "doc://OneTimePass/documentation/OneTimePass/TOTP/init(from:)": {
   "abstract" : [
 
@@ -239,7 +224,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",

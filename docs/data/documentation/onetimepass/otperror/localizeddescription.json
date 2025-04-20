@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Error-Implementations"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError"
       ]
     ]
   },
@@ -55,7 +54,40 @@
     ],
     "modules" : [
       {
-        "name" : "OneTimePass"
+        "name" : "OneTimePass",
+        "relatedModules" : [
+          "Swift"
+        ]
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "8.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.10",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "9.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "2.0",
+        "name" : "watchOS",
+        "unavailable" : false
       }
     ],
     "role" : "symbol",
@@ -115,7 +147,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -182,17 +214,6 @@
   "title" : "OTPError",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/otperror"
-},
-"doc://OneTimePass/documentation/OneTimePass/OTPError/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/otperror\/error-implementations"
 },
 "doc://OneTimePass/documentation/OneTimePass/OTPError/localizedDescription": {
   "abstract" : [

@@ -1,0 +1,737 @@
+{
+  "includedArchiveIdentifiers" : [
+    "OneTimePass"
+  ],
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Algorithms",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/init(secret:counter:algorithm:digits:issuer:account:)",
+                "title" : "init<D>(secret: D, counter: Int, algorithm: HashAlgorithm, digits: Int, issuer: String?, account: String?) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/init(urlstring:)",
+                "title" : "init(urlString: String) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/init(from:)",
+                "title" : "init(from: any Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/secret",
+                "title" : "let secret: [UInt8]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/counter",
+                "title" : "var counter: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/algorithm",
+                "title" : "let algorithm: HashAlgorithm",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/digits",
+                "title" : "let digits: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/issuer",
+                "title" : "let issuer: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/account",
+                "title" : "let account: String?",
+                "type" : "property"
+              },
+              {
+                "title" : "Code Generation",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/generatecode()",
+                "title" : "func generateCode() throws -> String",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/generatecode(counter:)",
+                "title" : "func generateCode(counter: Int) throws -> String",
+                "type" : "method"
+              },
+              {
+                "title" : "URL Representation",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hotp\/urlstring",
+                "title" : "var urlString: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/hotp\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/hotp\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/onetimepass\/hotp",
+            "title" : "HOTP",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/init(secret:algorithm:digits:period:issuer:account:)",
+                "title" : "init<D>(secret: D, algorithm: HashAlgorithm, digits: Int, period: UInt, issuer: String?, account: String?) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/init(urlstring:)",
+                "title" : "init(urlString: String) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/init(from:)",
+                "title" : "init(from: any Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/secret",
+                "title" : "let secret: [UInt8]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/algorithm",
+                "title" : "let algorithm: HashAlgorithm",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/digits",
+                "title" : "let digits: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/period",
+                "title" : "let period: UInt",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/issuer",
+                "title" : "let issuer: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/account",
+                "title" : "let account: String?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/currentdateprovider",
+                "title" : "var currentDateProvider: () -> Date",
+                "type" : "property"
+              },
+              {
+                "title" : "Code Generation",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/code\/code",
+                    "title" : "let code: String",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/code\/validfrom",
+                    "title" : "let validFrom: Date",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/code\/validto",
+                    "title" : "let validTo: Date",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/code\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/onetimepass\/totp\/code\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/totp\/code",
+                "title" : "TOTP.Code",
+                "type" : "struct"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/generatecode()",
+                "title" : "func generateCode() throws -> TOTP.Code",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/generatecode(date:)",
+                "title" : "func generateCode(date: Date) throws -> TOTP.Code",
+                "type" : "method"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Structures",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asynciterator\/next()",
+                        "title" : "func next() async throws -> TOTP.Code?",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asynciterator\/next(isolation:)",
+                        "title" : "func next(isolation: isolated (any Actor)?) async throws -> TOTP.Code?",
+                        "type" : "method"
+                      },
+                      {
+                        "title" : "Type Aliases",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asynciterator\/element",
+                        "title" : "TOTP.Codes.AsyncIterator.Element",
+                        "type" : "typealias"
+                      }
+                    ],
+                    "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asynciterator",
+                    "title" : "TOTP.Codes.AsyncIterator",
+                    "type" : "struct"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/makeasynciterator()",
+                    "title" : "func makeAsyncIterator() -> TOTP.Codes.AsyncIterator",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/element",
+                    "title" : "TOTP.Codes.Element",
+                    "type" : "typealias"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/allsatisfy(_:)",
+                        "title" : "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/compactmap(_:)-2wwho",
+                        "title" : "func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/compactmap(_:)-9a8t4",
+                        "title" : "func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/contains(_:)",
+                        "title" : "func contains(Self.Element) async rethrows -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/contains(where:)",
+                        "title" : "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/drop(while:)-4blpu",
+                        "title" : "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/drop(while:)-5i281",
+                        "title" : "func drop(while: (Self.Element) async throws -> Bool) -> AsyncThrowingDropWhileSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/dropfirst(_:)",
+                        "title" : "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/filter(_:)-15735",
+                        "title" : "func filter((Self.Element) async throws -> Bool) -> AsyncThrowingFilterSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/filter(_:)-1xsl6",
+                        "title" : "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/first(where:)",
+                        "title" : "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/flatmap(_:)-26ycc",
+                        "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/flatmap(_:)-2wop0",
+                        "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/flatmap(_:)-307q1",
+                        "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/flatmap(_:)-44vha",
+                        "title" : "func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/map(_:)-1qnf7",
+                        "title" : "func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/map(_:)-69jpw",
+                        "title" : "func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/max(by:)",
+                        "title" : "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/min(by:)",
+                        "title" : "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/prefix(_:)",
+                        "title" : "func prefix(Int) -> AsyncPrefixSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/prefix(while:)-6yjh4",
+                        "title" : "func prefix(while: (Self.Element) async throws -> Bool) rethrows -> AsyncThrowingPrefixWhileSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/prefix(while:)-783gv",
+                        "title" : "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/reduce(_:_:)",
+                        "title" : "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/reduce(into:_:)",
+                        "title" : "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asyncsequence-implementations",
+                    "title" : "AsyncSequence Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/totp\/codes-swift.struct",
+                "title" : "TOTP.Codes",
+                "type" : "struct"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/codes-swift.property",
+                "title" : "var codes: TOTP.Codes",
+                "type" : "property"
+              },
+              {
+                "title" : "Code Validation",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/validate(_:acceptpreviouscodes:acceptnextcodes:)",
+                "title" : "func validate(String, acceptPreviousCodes: Int, acceptNextCodes: Int) throws -> Bool",
+                "type" : "method"
+              },
+              {
+                "title" : "URL Representation",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/totp\/urlstring",
+                "title" : "var urlString: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/init(from:)",
+                    "title" : "init(from: any Decoder) throws",
+                    "type" : "init"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/totp\/decodable-implementations",
+                "title" : "Decodable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/==(_:_:)",
+                    "title" : "static func == (TOTP, TOTP) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/totp\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/totp\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/totp\/hashable-implementations",
+                "title" : "Hashable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/onetimepass\/totp",
+            "title" : "TOTP",
+            "type" : "struct"
+          },
+          {
+            "title" : "Hash",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hashalgorithm\/sha1",
+                "title" : "case SHA1",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hashalgorithm\/sha256",
+                "title" : "case SHA256",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hashalgorithm\/sha512",
+                "title" : "case SHA512",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/hashalgorithm\/init(rawvalue:)",
+                "title" : "init?(rawValue: String)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/hashalgorithm\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/hashalgorithm\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/hashalgorithm\/init(from:)",
+                    "title" : "init(from: any Decoder) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/hashalgorithm\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/hashalgorithm\/encode(to:)",
+                    "title" : "func encode(to: any Encoder) throws",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/hashalgorithm\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/hashalgorithm\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/onetimepass\/hashalgorithm",
+            "title" : "HashAlgorithm",
+            "type" : "enum"
+          },
+          {
+            "title" : "Errors",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/countermissing",
+                "title" : "case counterMissing",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/creatingotp",
+                "title" : "case creatingOTP",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/creatingurlcomponents",
+                "title" : "case creatingURLComponents",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/decodingsecret",
+                "title" : "case decodingSecret",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/invalidscheme",
+                "title" : "case invalidScheme",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/invalidtype",
+                "title" : "case invalidType",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/secretmissing",
+                "title" : "case secretMissing",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/wrongnumberofdigits",
+                "title" : "case wrongNumberOfDigits",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/onetimepass\/otperror\/zeroperiod",
+                "title" : "case zeroPeriod",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/otperror\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/otperror\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/onetimepass\/otperror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/onetimepass\/otperror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/onetimepass\/otperror",
+            "title" : "OTPError",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/onetimepass",
+        "title" : "OneTimePass",
+        "type" : "module"
+      },
+      {
+        "children" : [
+          {
+            "title" : "Usage",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/tutorials\/onetimepass\/use-with-swiftui",
+            "title" : "Use with SwiftUI",
+            "type" : "project"
+          }
+        ],
+        "path" : "\/tutorials\/table-of-contents",
+        "title" : "Usage",
+        "type" : "overview"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 2
+  }
+}

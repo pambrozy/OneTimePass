@@ -93,7 +93,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +101,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/counterMissing",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/creatingOTP",
@@ -115,6 +117,7 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError\/Equatable-Implementations",

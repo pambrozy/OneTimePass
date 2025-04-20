@@ -1,0 +1,620 @@
+{
+  "abstract" : [
+    {
+      "text" : "An async sequence of one-time password codes.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "OneTimePass",
+    "externalID" : "s:11OneTimePass4TOTPV5CodesV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Codes"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "OneTimePass"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Codes"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "TOTP.Codes"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Codes"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The current code is ",
+                  "type" : "text"
+                },
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "not",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "strong"
+                },
+                {
+                  "text" : " included.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/Sci"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "anchor" : "Code-Generation",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode()",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode(date:)",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes-swift.property"
+      ],
+      "title" : "Code Generation"
+    }
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Structures",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/AsyncIterator"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/makeAsyncIterator()"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/Element"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/AsyncSequence-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/onetimepass\/totp\/codes-swift.struct"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://OneTimePass/Sci": {
+  "identifier" : "doc:\/\/OneTimePass\/Sci",
+  "title" : "_Concurrency.AsyncSequence",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/documentation/OneTimePass": {
+  "abstract" : [
+    {
+      "text" : "A package for generating HMAC-based and Time-based one-time passwords.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "OneTimePass",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP": {
+  "abstract" : [
+    {
+      "text" : "The Time-based one-time password algorithm.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TOTP"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TOTP"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Code": {
+  "abstract" : [
+    {
+      "text" : "The code and the dates it is valid in.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Code"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Code"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP.Code",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/code"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct": {
+  "abstract" : [
+    {
+      "text" : "An async sequence of one-time password codes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Codes"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Codes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP.Codes",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct/AsyncIterator": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AsyncIterator"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/AsyncIterator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AsyncIterator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP.Codes.AsyncIterator",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asynciterator"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct/AsyncSequence-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/AsyncSequence-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "AsyncSequence Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/asyncsequence-implementations"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct/Element": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Element"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/Element",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Element"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP.Codes.Element",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/element"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct/makeAsyncIterator()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "makeAsyncIterator"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV",
+      "text" : "TOTP"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV5CodesV",
+      "text" : "Codes"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV5CodesV13AsyncIteratorV",
+      "text" : "AsyncIterator"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct\/makeAsyncIterator()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "makeAsyncIterator()",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct\/makeasynciterator()"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/codes-swift.property": {
+  "abstract" : [
+    {
+      "text" : "Returns an async sequence of one-time password codes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "codes"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV",
+      "text" : "TOTP"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV5CodesV",
+      "text" : "Codes"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes-swift.property",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "codes",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.property"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/generateCode()": {
+  "abstract" : [
+    {
+      "text" : "Generates a code for the current date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "generateCode"
+    },
+    {
+      "kind" : "text",
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV",
+      "text" : "TOTP"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV4CodeV",
+      "text" : "Code"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "generateCode()",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/generatecode()"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/generateCode(date:)": {
+  "abstract" : [
+    {
+      "text" : "Generates a code for a given date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "generateCode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "date"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DateV",
+      "text" : "Date"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV",
+      "text" : "TOTP"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV4CodeV",
+      "text" : "Code"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode(date:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "generateCode(date:)",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/generatecode(date:)"
+}
+}
+}

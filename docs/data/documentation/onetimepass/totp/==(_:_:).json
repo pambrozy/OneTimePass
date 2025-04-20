@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Equatable-Implementations"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
       ]
     ]
   },
@@ -181,7 +180,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -312,17 +311,6 @@
   "title" : "==(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp\/==(_:_:)"
-},
-"doc://OneTimePass/documentation/OneTimePass/TOTP/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/totp\/equatable-implementations"
 }
 }
 }

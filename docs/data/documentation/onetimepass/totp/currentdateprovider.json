@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:11OneTimePass4TOTPV19currentDateProvider10Foundation0F0Vycvp",
+    "externalID" : "s:11OneTimePass4TOTPV19currentDateProvider10Foundation0F0VyYbcvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -93,7 +93,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +101,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Properties",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/secret",

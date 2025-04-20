@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Hashable-Implementations"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
       ]
     ]
   },
@@ -151,7 +150,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -218,17 +217,6 @@
   "title" : "TOTP",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp"
-},
-"doc://OneTimePass/documentation/OneTimePass/TOTP/Hashable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Hashable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Hashable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/totp\/hashable-implementations"
 },
 "doc://OneTimePass/documentation/OneTimePass/TOTP/hash(into:)": {
   "abstract" : [

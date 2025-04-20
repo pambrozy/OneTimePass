@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/RawRepresentable-Implementations"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm"
       ]
     ]
   },
@@ -103,7 +102,10 @@
     ],
     "modules" : [
       {
-        "name" : "OneTimePass"
+        "name" : "OneTimePass",
+        "relatedModules" : [
+          "Swift"
+        ]
       }
     ],
     "role" : "symbol",
@@ -163,7 +165,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -230,17 +232,6 @@
   "title" : "HashAlgorithm",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/hashalgorithm"
-},
-"doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/RawRepresentable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/RawRepresentable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "RawRepresentable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/hashalgorithm\/rawrepresentable-implementations"
 },
 "doc://OneTimePass/documentation/OneTimePass/HashAlgorithm/hashValue": {
   "abstract" : [

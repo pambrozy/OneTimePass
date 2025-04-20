@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/Equatable-Implementations"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP"
       ]
     ]
   },
@@ -83,7 +82,10 @@
     ],
     "modules" : [
       {
-        "name" : "OneTimePass"
+        "name" : "OneTimePass",
+        "relatedModules" : [
+          "Swift"
+        ]
       }
     ],
     "role" : "symbol",
@@ -175,7 +177,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -304,17 +306,6 @@
   "title" : "!=(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/hotp\/!=(_:_:)"
-},
-"doc://OneTimePass/documentation/OneTimePass/HOTP/Equatable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/Equatable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Equatable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/hotp\/equatable-implementations"
 }
 }
 }

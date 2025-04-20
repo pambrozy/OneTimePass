@@ -161,6 +161,25 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The date at which the code should be valid.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "date"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "return-value",
@@ -179,30 +198,11 @@
         }
       ],
       "kind" : "content"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The date at which the code should be valid.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "date"
-        }
-      ]
     }
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -210,11 +210,13 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Code-Generation",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode()",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes-swift.property"
       ],
       "title" : "Code Generation"
     }
@@ -315,7 +317,41 @@
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp\/code"
 },
-"doc://OneTimePass/documentation/OneTimePass/TOTP/codes": {
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct": {
+  "abstract" : [
+    {
+      "text" : "An async sequence of one-time password codes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Codes"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Codes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP.Codes",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/codes-swift.property": {
   "abstract" : [
     {
       "text" : "Returns an async sequence of one-time password codes.",
@@ -341,15 +377,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Scs",
-      "text" : "AsyncThrowingStream"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:11OneTimePass4TOTPV",
       "text" : "TOTP"
     },
@@ -359,29 +386,16 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11OneTimePass4TOTPV4CodeV",
-      "text" : "Code"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s5ErrorP",
-      "text" : "Error"
-    },
-    {
-      "kind" : "text",
-      "text" : ">"
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV5CodesV",
+      "text" : "Codes"
     }
   ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes",
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes-swift.property",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "codes",
   "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/totp\/codes"
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.property"
 },
 "doc://OneTimePass/documentation/OneTimePass/TOTP/generateCode()": {
   "abstract" : [

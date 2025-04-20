@@ -85,7 +85,8 @@
         "doc:\/\/OneTimePass\/SE",
         "doc:\/\/OneTimePass\/SQ",
         "doc:\/\/OneTimePass\/SH",
-        "doc:\/\/OneTimePass\/SY"
+        "doc:\/\/OneTimePass\/SY",
+        "doc:\/\/OneTimePass\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -94,7 +95,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -102,6 +103,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA1",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/SHA256",
@@ -110,12 +113,15 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/init(rawValue:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm\/Equatable-Implementations",
@@ -354,6 +360,11 @@
   "title" : "init(rawValue:)",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/hashalgorithm\/init(rawvalue:)"
+},
+"doc://OneTimePass/s8SendableP": {
+  "identifier" : "doc:\/\/OneTimePass\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

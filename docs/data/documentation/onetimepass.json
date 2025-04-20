@@ -81,7 +81,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -89,6 +89,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Algorithms",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
@@ -96,12 +97,14 @@
       "title" : "Algorithms"
     },
     {
+      "anchor" : "Hash",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HashAlgorithm"
       ],
       "title" : "Hash"
     },
     {
+      "anchor" : "Errors",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/OTPError"
       ],

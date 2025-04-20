@@ -46,7 +46,7 @@
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -525,6 +525,18 @@
         }
       ]
     }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/onetimepass\/use-with-swiftui"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
   ]
 , 
 "references": {
@@ -620,14 +632,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/use-with-swiftui-1-1.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-1-1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/use-with-swiftui-1-1~dark.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-1-1~dark.png"
     }
   ]
 },
@@ -841,14 +853,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/use-with-swiftui-2-1.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/use-with-swiftui-2-1~dark.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-1~dark.png"
     }
   ]
 },
@@ -919,14 +931,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/use-with-swiftui-2-2.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-2.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/use-with-swiftui-2-2~dark.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-2~dark.png"
     }
   ]
 },
@@ -1002,14 +1014,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/use-with-swiftui-2-3.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-3.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/use-with-swiftui-2-3~dark.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-3~dark.png"
     }
   ]
 },
@@ -1081,14 +1093,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/use-with-swiftui-2-4.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-4.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/use-with-swiftui-2-4~dark.png"
+      "url" : "\/images\/OneTimePass\/use-with-swiftui-2-4~dark.png"
     }
   ]
 },

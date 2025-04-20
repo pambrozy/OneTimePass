@@ -1,6 +1,6 @@
 {
   "bundleDisplayName" : "OneTimePass",
-  "bundleIdentifier" : "OneTimePass",
+  "bundleID" : "OneTimePass",
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,

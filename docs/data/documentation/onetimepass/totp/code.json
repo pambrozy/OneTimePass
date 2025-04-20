@@ -79,9 +79,21 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/SQ",
+        "doc:\/\/OneTimePass\/SH",
+        "doc:\/\/OneTimePass\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -89,23 +101,35 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Code-Generation",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode()",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/generateCode(date:)",
-        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes"
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct",
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes-swift.property"
       ],
       "title" : "Code Generation"
     }
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code\/code",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code\/validFrom",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code\/validTo"
       ],
       "title" : "Instance Properties"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code\/Equatable-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -122,6 +146,16 @@
   ]
 , 
 "references": {
+"doc://OneTimePass/SH": {
+  "identifier" : "doc:\/\/OneTimePass\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://OneTimePass/SQ": {
+  "identifier" : "doc:\/\/OneTimePass\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
 "doc://OneTimePass/documentation/OneTimePass": {
   "abstract" : [
     {
@@ -203,6 +237,17 @@
   "title" : "TOTP.Code",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp\/code"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Code/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Code\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/code\/equatable-implementations"
 },
 "doc://OneTimePass/documentation/OneTimePass/TOTP/Code/code": {
   "abstract" : [
@@ -315,7 +360,41 @@
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp\/code\/validto"
 },
-"doc://OneTimePass/documentation/OneTimePass/TOTP/codes": {
+"doc://OneTimePass/documentation/OneTimePass/TOTP/Codes-swift.struct": {
+  "abstract" : [
+    {
+      "text" : "An async sequence of one-time password codes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Codes"
+    }
+  ],
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/Codes-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Codes"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TOTP.Codes",
+  "type" : "topic",
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.struct"
+},
+"doc://OneTimePass/documentation/OneTimePass/TOTP/codes-swift.property": {
   "abstract" : [
     {
       "text" : "Returns an async sequence of one-time password codes.",
@@ -341,15 +420,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Scs",
-      "text" : "AsyncThrowingStream"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:11OneTimePass4TOTPV",
       "text" : "TOTP"
     },
@@ -359,29 +429,16 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11OneTimePass4TOTPV4CodeV",
-      "text" : "Code"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s5ErrorP",
-      "text" : "Error"
-    },
-    {
-      "kind" : "text",
-      "text" : ">"
+      "preciseIdentifier" : "s:11OneTimePass4TOTPV5CodesV",
+      "text" : "Codes"
     }
   ],
-  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes",
+  "identifier" : "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP\/codes-swift.property",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "codes",
   "type" : "topic",
-  "url" : "\/documentation\/onetimepass\/totp\/codes"
+  "url" : "\/documentation\/onetimepass\/totp\/codes-swift.property"
 },
 "doc://OneTimePass/documentation/OneTimePass/TOTP/generateCode()": {
   "abstract" : [
@@ -507,6 +564,11 @@
   "title" : "generateCode(date:)",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp\/generatecode(date:)"
+},
+"doc://OneTimePass/s8SendableP": {
+  "identifier" : "doc:\/\/OneTimePass\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

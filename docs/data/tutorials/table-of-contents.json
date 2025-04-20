@@ -19,7 +19,7 @@
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -78,6 +78,18 @@
       "kind" : "volume",
       "name" : null
     }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/table-of-contents"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
   ]
 , 
 "references": {
@@ -120,14 +132,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/usage.png"
+      "url" : "\/images\/OneTimePass\/usage.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/usage~dark.png"
+      "url" : "\/images\/OneTimePass\/usage~dark.png"
     }
   ]
 }

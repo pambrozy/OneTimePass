@@ -84,7 +84,8 @@
         "doc:\/\/OneTimePass\/Se",
         "doc:\/\/OneTimePass\/SE",
         "doc:\/\/OneTimePass\/SQ",
-        "doc:\/\/OneTimePass\/SH"
+        "doc:\/\/OneTimePass\/SH",
+        "doc:\/\/OneTimePass\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -93,7 +94,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -101,6 +102,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Algorithms",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/TOTP"
@@ -110,6 +112,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(secret:counter:algorithm:digits:issuer:account:)",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/init(urlString:)",
@@ -118,6 +121,7 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Properties",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/secret",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/counter",
@@ -129,6 +133,7 @@
       "title" : "Properties"
     },
     {
+      "anchor" : "Code-Generation",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/generateCode()",
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/generateCode(counter:)"
@@ -136,12 +141,14 @@
       "title" : "Code Generation"
     },
     {
+      "anchor" : "URL-Representation",
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/urlString"
       ],
       "title" : "URL Representation"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/OneTimePass\/documentation\/OneTimePass\/HOTP\/Equatable-Implementations"
@@ -520,7 +527,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -877,6 +884,11 @@
   "title" : "TOTP",
   "type" : "topic",
   "url" : "\/documentation\/onetimepass\/totp"
+},
+"doc://OneTimePass/s8SendableP": {
+  "identifier" : "doc:\/\/OneTimePass\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }
