@@ -2,7 +2,8 @@
 //  TOTP+Codes.swift
 //  OneTimePass
 //
-//  Created by Przemek Ambroży on 29/03/2025.
+//  Created by Przemek Ambroży on 29.03.2025.
+//  Copyright © 2025 Przemysław Ambroży
 //
 
 import Foundation
